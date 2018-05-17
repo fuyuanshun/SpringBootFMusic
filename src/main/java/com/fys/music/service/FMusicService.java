@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.Date;
 import java.util.List;
 
-public interface UserService {
+public interface FMusicService {
     /**
      * 注册用户，往数据库插入一条信息
      * @param user

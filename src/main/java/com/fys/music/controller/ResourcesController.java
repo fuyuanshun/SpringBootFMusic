@@ -1,7 +1,7 @@
 package com.fys.music.controller;
 
 import com.fys.music.model.Resource;
-import com.fys.music.service.UserService;
+import com.fys.music.service.FMusicService;
 import com.fys.music.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 @Controller
 public class ResourcesController {
     @Autowired
-    private UserService userService;
+    private FMusicService userService;
 
     /**
      * 资源列表页面

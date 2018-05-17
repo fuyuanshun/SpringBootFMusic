@@ -1,9 +1,9 @@
 package com.fys.music.service.impl;
 
-import com.fys.music.dao.UserDao;
+import com.fys.music.dao.FMusicDao;
 import com.fys.music.model.Resource;
 import com.fys.music.model.User;
-import com.fys.music.service.UserService;
+import com.fys.music.service.FMusicService;
 import com.fys.music.util.MailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,16 +14,16 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class FMusicServiceImpl implements FMusicService {
     @Autowired
-    private UserDao userDao;
+    private FMusicDao FMusicDao;
 
     /**
      * 注册用户
      */
     @Override
     public void insertUser(User user) {
-        userDao.insertUser(user);
+        FMusicDao.insertUser(user);
     }
 
     /**
@@ -31,17 +31,17 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public String selectByUsername(String username) {
-        return userDao.selectByUsername(username);
+        return FMusicDao.selectByUsername(username);
     }
 
     @Override
     public String selectPasswordByUsername(String username) {
-        return userDao.selectPasswordByUsername(username);
+        return FMusicDao.selectPasswordByUsername(username);
     }
 
     @Override
     public User selectByUrl(String url) {
-        return userDao.selectByUrl(url);
+        return FMusicDao.selectByUrl(url);
     }
 
     @Override
@@ -111,7 +111,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public Integer selectState(String username) {
-        return userDao.selectState(username);
+        return FMusicDao.selectState(username);
     }
 
     /**
@@ -120,7 +120,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void updateState(String url) {
-        userDao.updateState(url);
+        FMusicDao.updateState(url);
     }
 
     /**
@@ -130,7 +130,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public String selectMailIsExist(String mail) {
-        return userDao.selectMailIsExist(mail);
+        return FMusicDao.selectMailIsExist(mail);
     }
 
     /**
@@ -139,7 +139,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<Resource> selectResource() {
-        return userDao.selectResource();
+        return FMusicDao.selectResource();
     }
 
     /**
@@ -149,7 +149,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Resource> selectResourceByPage(int currentPage, int pageSize) {
         currentPage = (currentPage-1)*10;
-        return userDao.selectResourceByPage(currentPage, pageSize);
+        return FMusicDao.selectResourceByPage(currentPage, pageSize);
     }
 
     /**
@@ -177,7 +177,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void updateValidateCode(String validateCode, String email) {
-        userDao.updateValidateCode(validateCode, email);
+        FMusicDao.updateValidateCode(validateCode, email);
     }
 
     /**
@@ -185,7 +185,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public String selectValidateCode(String email) {
-        return userDao.selectValidateCode(email);
+        return FMusicDao.selectValidateCode(email);
     }
 
     /**
@@ -193,12 +193,12 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void updateOutDate(Date outDate) {
-        userDao.updateOutDate(outDate);
+        FMusicDao.updateOutDate(outDate);
     }
 
     @Override
     public String selectOutDate(String validateCode) {
-        return userDao.selectOutDate(validateCode);
+        return FMusicDao.selectOutDate(validateCode);
     }
 
     /**
@@ -225,7 +225,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String selectUsernameByEmail(String email) {
-        return userDao.selectUsernameByEmail(email);
+        return FMusicDao.selectUsernameByEmail(email);
     }
 
     /**
@@ -235,7 +235,7 @@ public class UserServiceImpl implements UserService {
     public String updatePassword(String username, String password, String password2, String email) {
         if(null != username && null != password && null != password2 && password.equals(password2)) {
             if(selectUsernameByEmail(email).equals(username)) {
-                userDao.updatePassword(username, password);
+                FMusicDao.updatePassword(username, password);
                 return "updateSuccess";
             } else {
                 return "updateError";

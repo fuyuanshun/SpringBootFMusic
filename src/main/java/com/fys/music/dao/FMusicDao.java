@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 @Mapper
-public interface UserDao {
+public interface FMusicDao {
     /**
      * 注册用户，往数据库插入一条信息
      * @param user

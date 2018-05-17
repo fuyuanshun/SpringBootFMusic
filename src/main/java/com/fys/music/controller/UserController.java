@@ -1,6 +1,6 @@
 package com.fys.music.controller;
 
-import com.fys.music.service.UserService;
+import com.fys.music.service.FMusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 @Controller
 public class UserController {
     @Autowired
-    private UserService userService;
+    private FMusicService userService;
 
     /**
      * 用户填写注册信息页面
