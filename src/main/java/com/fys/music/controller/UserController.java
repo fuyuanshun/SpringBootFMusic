@@ -52,7 +52,7 @@ public class UserController {
 
 
     /**
-     * 激活邮箱1
+     * 激活邮箱
      */
 
     @RequestMapping("/mailConf")
