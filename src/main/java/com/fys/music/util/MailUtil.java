@@ -35,9 +35,9 @@ public class MailUtil {
 
         Transport transport = session.getTransport();
 
-        transport.connect("849485789@qq.com", "jujimzkkeobsbbdg");
+        transport.connect("849485789@qq.com", "lxdvzrvgikhgbbff");
 
-        transport.sendMessage(msg, /*new Address[]{new InternetAddress(receiveMailAccount)}*/msg.getAllRecipients());
+        transport.sendMessage(msg, msg.getAllRecipients());
         transport.close();
     }
 

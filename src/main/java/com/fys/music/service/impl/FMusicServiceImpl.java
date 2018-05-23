@@ -4,12 +4,11 @@ import com.fys.music.dao.FMusicDao;
 import com.fys.music.model.Resource;
 import com.fys.music.model.User;
 import com.fys.music.service.FMusicService;
+import com.fys.music.util.MD5Util;
 import com.fys.music.util.MailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -59,8 +58,10 @@ public class FMusicServiceImpl implements FMusicService {
              */
             if(password.equals(password2) && null != email && null != sex && null != age && null != birthday && null != hobby && null != phone && null != address) {
 
-                User user = new User(username, password, email, sex, age, phone, birthday, hobby, address);
+                //将密码加密后存储到数据库
+                password = MD5Util.getMD5(password);
 
+                User user = new User(username, password, email, sex, age, phone, birthday, hobby, address);
                 String url = UUID.randomUUID().toString();
                 url = url.replace("-", "");
                 user.setState(0);
@@ -87,6 +88,8 @@ public class FMusicServiceImpl implements FMusicService {
         if(null != password && null != username) {
             String dbpassword = selectPasswordByUsername(username);
             Integer state = selectState(username);
+
+            password = MD5Util.getMD5(password);
 
             if(null != state && state == 0) {
                 return "userIsNotActive";
@@ -163,7 +166,7 @@ public class FMusicServiceImpl implements FMusicService {
         String validateCode = UUID.randomUUID().toString();
         validateCode = validateCode.replace("-", "");
         try {
-            MailUtil.sendTo("<a href='localhost:8080/resetPassword?url='"+validateCode+">请点击修改密码</a> 如果链接无法点击，请复制以下链接到浏览器: <a>localhost:8080/FMusic/resetPassword?validateCode="+validateCode+"&email="+email+"</a>", email);
+            MailUtil.sendTo("<a href='localhost:8080/resetPassword?url='"+validateCode+">请点击修改密码</a> 如果链接无法点击，请复制以下链接到浏览器: <a>localhost:8080/resetPassword?validateCode="+validateCode+"&email="+email+"</a>", email);
             updateValidateCode(validateCode, email);
         } catch (Exception e) {
             e.printStackTrace();
