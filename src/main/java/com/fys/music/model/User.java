@@ -1,17 +1,9 @@
 package com.fys.music.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 /**
  * 用户实体类
  */
-@Entity
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String username;

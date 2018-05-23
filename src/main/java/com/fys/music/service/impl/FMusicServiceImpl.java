@@ -8,6 +8,8 @@ import com.fys.music.util.MailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -56,6 +58,7 @@ public class FMusicServiceImpl implements FMusicService {
              * 后台对数据的验证,保证值不为空才发送至后台
              */
             if(password.equals(password2) && null != email && null != sex && null != age && null != birthday && null != hobby && null != phone && null != address) {
+
                 User user = new User(username, password, email, sex, age, phone, birthday, hobby, address);
 
                 String url = UUID.randomUUID().toString();
