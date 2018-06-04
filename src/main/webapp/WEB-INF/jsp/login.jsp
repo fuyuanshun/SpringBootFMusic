@@ -30,7 +30,7 @@
                     <div class="control-group">
                         <div class="controls">
                             <label for="username" class="control-label fa fa-envelope"></label>
-                            <input id="username" type="text" name="username" placeholder="请输入您的用户名" tabindex="1" autofocus="autofocus" class="form-control input-medium"/>
+                            <input id="username" type="text" name="username" placeholder="请输入您的用户名" tabindex="1" autofocus="autofocus" class="form-control input-medium glyphicon-user"/>
                         </div>
                     </div>
                     <div class="control-group">
