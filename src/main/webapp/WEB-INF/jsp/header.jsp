@@ -15,12 +15,6 @@
     <link href="css/header.css" rel="stylesheet" >
     <script type="text/javascript" src="js/header.js"></script>
 </head>
-
-<style type="text/css">
-    .Item {
-        background: yellow;
-    }
-</style>
 <%
     String result = (String)request.getSession().getAttribute("username");
     if(null == result){

@@ -20,15 +20,16 @@
 </head>
 
 <body>
-<ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="#">用户注册</a></li>
-    <li role="presentation"><a href="#">用户登录</a></li>
-</ul>
-
 <div class="container">
     <div class="row row-centered">
         <div class="well col-md-6 col-centered">
-        <form method="post" action="" id="myform" class="form-control" >
+            <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a href="#">Java</a></li>
+                <li role="presentation"><a href="#">IOS</a></li>
+                <li role="presentation"><a href="#">Android</a></li>
+            </ul>
+
+            <form method="post" action="" id="myform" class="form-control" >
             <div class="input-group input-group-md">
                 <span class="input-group-addon">用户名</span>
                 <input type="text" placeholder="请输入用户名" name="username" id="username" required class="form-control"/>
