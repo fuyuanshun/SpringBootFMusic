@@ -96,7 +96,6 @@ $(function () {
         }
     });
 
-
     $("#myform").validate({
         errorPlacement: function(error, element) {
             $( element )

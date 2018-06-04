@@ -16,25 +16,11 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/musicdemo/audioplayer.css" />
 </head>
 <body>
-<div class="top3">
-    <div class="new1 main">
-        <a href="${pageContext.request.contextPath}/music">播放</a>
-    </div>
-
-    <div class="new2 main">
-        <a href="${pageContext.request.contextPath}/music">播放2</a>
-    </div>
-
-    <div class="new3 main">
-        <a href="${pageContext.request.contextPath}/music">播放3</a>
-    </div>
-</div>
-
 <div class="new0">
+
     <a href="${pageContext.request.contextPath}/music">更多音乐1</a><br><br>
     <a href="${pageContext.request.contextPath}/hotmusic">更多音乐2</a><br><br>
-    <a href="${pageContext.request.contextPath}/resource?currentPage=1">福利</a><br><br>
-    <br><br><br><br>
+    <a href="${pageContext.request.contextPath}/resource?currentPage=1">福利</a>
     <div id="wrapper">
         <span>登陆才可以听音乐哦~~</span>
         <audio preload="auto" controls>

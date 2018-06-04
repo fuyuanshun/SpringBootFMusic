@@ -22,7 +22,7 @@ public class UserController {
      */
     @RequestMapping("/register")
     public String register() {
-        return "register";
+        return "registerAndLogin";
     }
 
     /**
@@ -64,7 +64,7 @@ public class UserController {
     public String mailConf(HttpServletRequest req, HttpServletResponse resp) {
         String url = req.getParameter("url");
         userService.mailConf(url);
-        return "/login";
+        return "/registerAndLogin";
     }
 
 
@@ -73,7 +73,7 @@ public class UserController {
      */
     @RequestMapping("/login")
     public String login() {
-        return "login";
+        return "registerAndLogin";
     }
 
     /**
