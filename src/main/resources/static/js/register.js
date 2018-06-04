@@ -98,6 +98,13 @@ $(function () {
 
 
     $("#myform").validate({
+        errorPlacement: function(error, element) {
+            $( element )
+                .closest( "form" )
+                .find( "label[for='" + element.attr( "id" ) + "']" )
+                .append( error );
+        },
+        errorElement: "span",
         rules : {
             username : {
                 required : true,
@@ -176,6 +183,6 @@ $(function () {
             validateCode : {
                 required : "请填写验证码"
             }
-        }
+        },
     })
 })
