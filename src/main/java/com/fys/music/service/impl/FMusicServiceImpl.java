@@ -46,9 +46,13 @@ public class FMusicServiceImpl implements FMusicService {
     }
 
     @Override
-    public String registerDeal(String username, String password, String password2, String email, String sex, Integer age, String birthday, String hobby, String phone, String address) {
+    public String registerDeal(String username, String password, String password2, String email, String sex, Integer age, String birthday, String hobby, String phone, String address, String sessionCode, String validateCode) {
         String isexist = selectByUsername(username);
         String mail = selectMailIsExist(email);
+
+        if (!validateCode.equalsIgnoreCase(sessionCode)) {
+            return "validateCodeERROR";
+        }
         if(null == isexist) {
             if(null != mail) {
                 return "emailIsExist";

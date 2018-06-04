@@ -9,6 +9,14 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/register.js"></script>
     <%--表单验证插件--%>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery/jquery.validate.js"></script>
+    <script>
+        /**
+         * 刷新验证码
+         */
+        function changeImg(){
+            document.getElementById("validateCodeImg").src="/drawImage?"+Math.random();
+        }
+    </script>
 </head>
 
 <body>
@@ -58,9 +66,15 @@
             <div class="col-sm-10">
                 <input type="text" name="address" id="address" class="form-control"  required/>
             </div>
+            <label for="username">验证码</label>
             <div class="col-sm-10">
-                <input type="submit" value="注册" id="submit" class="btn btn-default" />
-                <input type="button" value="已经有账号啦~去登陆" class="btn btn-default" id="gologin"/>
+                <input type="text" name="validateCode" id="validateCode" class="form-control"  required/>
+                <img alt="验证码看不清，换一张" src="${pageContext.request.contextPath}/drawImage" id="validateCodeImg" onclick="changeImg()">
+                <input type="button" onclick="changeImg()" value="看不清，换一张">
+            </div>
+            <div class="col-sm-10">
+                <input type="submit" value="注册" id="submit" class="btn btn-success" />
+                <input type="button" value="已经有账号啦~去登陆" class="btn btn-info" id="gologin"/>
             </div>
         </form>
     </div>

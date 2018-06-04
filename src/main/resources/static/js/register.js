@@ -85,6 +85,8 @@ $(function () {
                         $(window).attr('location', '/login');
                     } else if (data == "emailIsExist") {
                         alert("邮箱已经被使用!");
+                    } else if (data == "validateCodeERROR") {
+                        alert("请填写正确的验证码!")
                     }
                 },
                 error : function (XMLHttpRequest, textStatus, errorThrown) {
@@ -170,6 +172,9 @@ $(function () {
             },
             hobby : {
                 required : "此选项为必填项",
+            },
+            validateCode : {
+                required : "请填写验证码"
             }
         }
     })

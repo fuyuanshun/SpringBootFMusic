@@ -46,7 +46,12 @@ public class UserController {
         String hobby = req.getParameter("hobby");
         String phone = req.getParameter("phone");
         String address = req.getParameter("address");
-        String ret = userService.registerDeal(username, password, password2, email, sex, age, birthday, hobby, phone, address);
+        //用户填写的验证码
+        String validateCode = req.getParameter("validateCode");
+        //session中的验证码
+        String sessionCode = (String) req.getSession().getAttribute("checkCode");
+
+        String ret = userService.registerDeal(username, password, password2, email, sex, age, birthday, hobby, phone, address, sessionCode, validateCode);
         print.write(ret);
     }
 

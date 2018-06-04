@@ -10,6 +10,9 @@ import javax.mail.internet.MimeMessage;
 import java.util.Date;
 import java.util.Properties;
 
+/**
+ * 根据自己的邮箱修改发件人和密码
+ */
 public class MailUtil {
     public static void sendTo(String body, String receiveMailAccount) throws Exception {
 
@@ -35,7 +38,7 @@ public class MailUtil {
 
         Transport transport = session.getTransport();
 
-        transport.connect("849485789@qq.com", "lxdvzrvgikhgbbff");
+        transport.connect("849485789@qq.com", "fbbxddkitdspbeag");
 
         transport.sendMessage(msg, msg.getAllRecipients());
         transport.close();

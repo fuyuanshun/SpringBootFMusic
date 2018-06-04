@@ -34,7 +34,7 @@ public interface FMusicService {
     /**
      * 判断用户是否已经激活
      */
-    String registerDeal(String username, String password, String password2, String email, String sex, Integer age, String birthday, String hobby, String phone, String address);
+    String registerDeal(String username, String password, String password2, String email, String sex, Integer age, String birthday, String hobby, String phone, String address, String sessionCode, String validateCode);
 
     /**
      * 更新用户的状态
