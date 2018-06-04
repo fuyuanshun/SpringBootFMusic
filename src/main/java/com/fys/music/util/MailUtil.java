@@ -2,11 +2,10 @@ package com.fys.music.util;
 
 import com.sun.mail.util.MailSSLSocketFactory;
 
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.security.GeneralSecurityException;
 import java.util.Date;
 import java.util.Properties;
 
@@ -14,7 +13,7 @@ import java.util.Properties;
  * 根据自己的邮箱修改发件人和密码
  */
 public class MailUtil {
-    public static void sendTo(String body, String receiveMailAccount) throws Exception {
+    public static boolean sendTo(String body, String receiveMailAccount) {
 
         Properties props = new Properties();
 
@@ -27,21 +26,40 @@ public class MailUtil {
         // 发送邮件协议名称
         props.setProperty("mail.transport.protocol", "smtp");
 
-        MailSSLSocketFactory sf = new MailSSLSocketFactory();
+        MailSSLSocketFactory sf = null;
+        try {
+            sf = new MailSSLSocketFactory();
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+            return false;
+        }
         sf.setTrustAllHosts(true);
         props.put("mail.smtp.ssl.enable", "true");
         props.put("mail.smtp.ssl.socketFactory", sf);
 
         Session session = Session.getInstance(props);
 
-        Message msg = createMimeMessage(session, "849485789@qq.com", receiveMailAccount, body);
+        Message msg = null;
+        try {
+            msg = createMimeMessage(session, "849485789@qq.com", receiveMailAccount, body);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        Transport transport = session.getTransport();
-
-        transport.connect("849485789@qq.com", "fbbxddkitdspbeag");
-
-        transport.sendMessage(msg, msg.getAllRecipients());
-        transport.close();
+        Transport transport = null;
+        try {
+            transport = session.getTransport();
+            transport.connect("849485789@qq.com", "fbbxddkitdspbeag");
+            transport.sendMessage(msg, msg.getAllRecipients());
+            transport.close();
+        } catch (NoSuchProviderException e) {
+            e.printStackTrace();
+            return false;
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     /**

@@ -16,7 +16,7 @@ public interface FMusicDao {
      * @param user
      */
     @Insert("insert into fmusic.user (username, password, email, url, state, sex, age, phone, birthday, hobby, address) values (#{username},#{password}, #{email}, #{url}, #{state}, #{sex}, #{age}, #{phone}, #{birthday}, #{hobby}, #{address})")
-    void insertUser(User user);
+    int insertUser(User user);
 
 
     /**
@@ -37,12 +37,6 @@ public interface FMusicDao {
      */
     @Select("select state from user where username = #{username}")
     Integer selectState(String username);
-
-    /**
-     * 根据url查询用户
-     */
-    @Select("select * from user where url = #{url}")
-    User selectByUrl(String url);
 
     /**
      * 激活用户

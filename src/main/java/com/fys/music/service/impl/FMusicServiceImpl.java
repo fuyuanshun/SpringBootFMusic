@@ -23,8 +23,8 @@ public class FMusicServiceImpl implements FMusicService {
      * 注册用户
      */
     @Override
-    public void insertUser(User user) {
-        FMusicDao.insertUser(user);
+    public int insertUser(User user) {
+        return FMusicDao.insertUser(user);
     }
 
     /**
@@ -38,11 +38,6 @@ public class FMusicServiceImpl implements FMusicService {
     @Override
     public String selectPasswordByUsername(String username) {
         return FMusicDao.selectPasswordByUsername(username);
-    }
-
-    @Override
-    public User selectByUrl(String url) {
-        return FMusicDao.selectByUrl(url);
     }
 
     @Override
@@ -71,12 +66,18 @@ public class FMusicServiceImpl implements FMusicService {
                 user.setState(0);
                 user.setUrl(url);
                 try {
-                    MailUtil.sendTo("<a href='127.0.0.1:8080/mailConf?url=" + url + "'>激活帐号</a> 如果无法跳转，请将链接复制到浏览器: <a href='127.0.0.1:8080/FMusic/mailConf?url='"+url+">127.0.0.1:8080/FMusic/mailConf?url="+url+"</a>", user.getEmail());
+                    if (!MailUtil.sendTo("<a href='127.0.0.1:8080/mailConf?url=" + url + "'>激活帐号</a> 如果无法跳转，请将链接复制到浏览器: <a href='127.0.0.1:8080/FMusic/mailConf?url='" + url + ">127.0.0.1:8080/FMusic/mailConf?url=" + url + "</a>", user.getEmail())) {
+                        return "registerError";
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                insertUser(user);
-                return "registerSuccess";
+                //防止用户注册的时候一直点击，从而数据库出现多条记录
+                if (null == selectByUsername(username)) {
+                    if (1 == insertUser(user)) {
+                        return "registerSuccess";
+                    }
+                }
             }
             return "userIsExist";
         } else {

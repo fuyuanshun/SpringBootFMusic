@@ -12,7 +12,7 @@ public interface FMusicService {
      * 注册用户，往数据库插入一条信息
      * @param user
      */
-    void insertUser(User user);
+    int insertUser(User user);
 
     /**
      * 通过用户名查询数据库是否有此数据
@@ -24,12 +24,6 @@ public interface FMusicService {
      * 通过用户名查询密码
      */
     String selectPasswordByUsername(String username);
-
-
-    /**
-     * 根据url查询用户
-     */
-    User selectByUrl(String url);
 
     /**
      * 判断用户是否已经激活
@@ -74,7 +68,7 @@ public interface FMusicService {
     /**
      * 找回密码的处理逻辑
      */
-    public void forgetPasswordDeal(String email);
+    void forgetPasswordDeal(String email);
 
     /**
      * 更新找回密码的validateCode
