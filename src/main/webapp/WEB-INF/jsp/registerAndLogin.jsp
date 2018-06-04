@@ -139,10 +139,10 @@
                     </div>
                     <img alt="验证码看不清，换一张" src="${pageContext.request.contextPath}/drawImage" id="validateCodeImg"
                          onclick="changeImg()">
-                    <input type="button" onclick="changeImg()" value="看不清，换一张">
+                    <input type="button" onclick="changeImg()" value="看不清，换一张" class="btn-info">
                 </div>
                 <div class="input-group input-group-md">
-                    <input type="submit" value="注册" id="submit" class="btn btn-success"/>
+                    <input type="submit" value="注册" id="submit" class="btn btn-block btn-success"/>
                 </div>
             </form>
         </div>
