@@ -42,6 +42,8 @@ public class FMusicServiceImpl implements FMusicService {
 
     @Override
     public String registerDeal(String username, String password, String password2, String email, String sex, Integer age, String birthday, String hobby, String phone, String address, String sessionCode, String validateCode) {
+        //服务器地址
+        String path = "47.106.191.205:8080";
         String isexist = selectByUsername(username);
         String mail = selectMailIsExist(email);
 
@@ -66,7 +68,7 @@ public class FMusicServiceImpl implements FMusicService {
                 user.setState(0);
                 user.setUrl(url);
                 try {
-                    if (!MailUtil.sendTo("<a href='127.0.0.1:8080/mailConf?url=" + url + "'>激活帐号</a> 如果无法跳转，请将链接复制到浏览器: <a href='127.0.0.1:8080/FMusic/mailConf?url='" + url + ">127.0.0.1:8080/FMusic/mailConf?url=" + url + "</a>", user.getEmail())) {
+                    if (!MailUtil.sendTo("<a href='" + path + "/mailConf?url=" + url + "'>激活帐号</a> 如果无法跳转，请将链接复制到浏览器: <a href='"+ path +"/FMusic/mailConf?url='" + url + ">"+ path +"/FMusic/mailConf?url=" + url + "</a>", user.getEmail())) {
                         return "registerError";
                     }
                 } catch (Exception e) {

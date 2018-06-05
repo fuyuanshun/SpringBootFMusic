@@ -1,6 +1,6 @@
-<%@page isELIgnored="false"%>
-<%@   page   contentType="text/html;charset=utf-8"%>
-<%@ page   pageEncoding="utf-8"%>
+<%@page isELIgnored="false" %>
+<%@   page contentType="text/html;charset=utf-8" %>
+<%@ page pageEncoding="utf-8" %>
 <jsp:include page="header.jsp"></jsp:include>
 <%response.setCharacterEncoding("utf8");%>
 <html>
@@ -10,19 +10,47 @@
     <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
 </head>
 <style>
-    div.carousel-item img{
-        width:100%;
-        height:300px;
+    div.carousel-item img {
+        width: 100%;
+        height: 300px;
     }
 
-    div#carousel-example-generic{
-        width:80%;
-        margin:0 auto;
+    div#carousel-example-generic {
+        width: 80%;
+        margin: 0 auto;
     }
 
+    .tab a {
+        color: black;
+    }
+
+    .tab a:hover {
+        text-decoration: none;
+        color: darkred;
+    }
+
+    .row {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    .row img{
+        width:140px; height:140px
+    }
 </style>
 
 <body>
+<%--搜索start--%>
+<div class="container">
+    <div class="input-group">
+        <input type="text" class="form-control col-sm-2" style="float: right" placeholder="请输入搜索内容">
+        <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">搜索</button>
+      </span>
+    </div>
+</div>
+<%--搜索end--%>
+
+<%--轮播图start--%>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- ol标签是图片轮播的控制点 -->
     <ol class="carousel-indicators">
@@ -45,16 +73,16 @@
     <div class="carousel-inner" role="listbox">
         <!-- 每一个.item就是单个轮播项目，注意默认要给第一个轮播项目加上active，表示为焦点 -->
         <div class="carousel-item active">
-            <a href="/hotmusic"><img src="images/music/music1.png"></a>
+            <a href="/hotmusic"><img src="images/music/music1.png" class="img-rounded"></a>
         </div>
         <div class="carousel-item">
-            <a href="/hotmusic"><img src="images/music/music2.png"></a>
+            <a href="/hotmusic"><img src="images/music/music2.png" class="img-circle"></a>
         </div>
         <div class="carousel-item">
-            <a href="/music"><img src="images/music/music3.png"></a>
+            <a href="/music"><img src="images/music/music3.png" class="img-thumbnail"></a>
         </div>
         <div class="carousel-item">
-            <a href="/music"><img src="images/music/music4.png"></a>
+            <a href="/music"><img src="images/music/music4.png" class="img-rounded"></a>
         </div>
     </div>
     <!-- 图片轮播上左右两个控制按钮，分别点击可以滚动到上一张和下一张 -->
@@ -69,8 +97,62 @@
         <span class="sr-only">下一张</span>
     </a>
 </div>
-<div >
-
+<div>
 </div>
+<%--轮播图end--%>
+
+<div class="container">
+    <%--顶部显示text Div--%>
+    <div class="tab border-bottom">
+        <h4 style="display: inline-block;"><a href="#">热门推荐</a></h4>
+        <a href="#">华语</a>
+        <span class="line">|</span>
+        <a href="#">流行</a>
+        <span class="line">|</span>
+        <a href="#">摇滚</a>
+        <span class="line">|</span>
+        <a href="#">民谣</a>
+        <span class="line">|</span>
+        <a href="#">电子</a>
+    </div>
+    <%--显示图片的大div--%>
+    <div class="col-xs-12 row">
+        <div class="col-xs-3 row">
+            <img src="images/music/musicbg1.png">
+            <div class="carousel-caption">标题1</div>
+        </div>
+        <div class="col-xs-3 row">
+            <img src="images/music/musicbg2.png">
+            <div class="carousel-caption">标题2</div>
+        </div>
+        <div class="col-xs-3 row">
+            <img src="images/music/musicbg3.png">
+            <div class="carousel-caption">标题3</div>
+        </div>
+        <div class="col-xs-3 row">
+            <img src="images/music/musicbg3.png">
+            <div class="carousel-caption">标题4</div>
+        </div>
+    </div>
+        <div class="col-xs-12 row">
+            <div class="col-xs-3 row">
+                <img src="images/music/musicbg2.png">
+                <div class="carousel-caption">标题5</div>
+            </div>
+            <div class="col-xs-3 row">
+                <img src="images/music/musicbg1.png">
+                <div class="carousel-caption">标题6</div>
+            </div>
+            <div class="col-xs-3 row">
+                <img src="images/music/musicbg1.png">
+                <div class="carousel-caption">标题7</div>
+            </div>
+            <div class="col-xs-3 row">
+                <img src="images/music/musicbg2.png">
+                <div class="carousel-caption">标题8</div>
+            </div>
+        </div>
+</div>
+
 </body>
 </html>

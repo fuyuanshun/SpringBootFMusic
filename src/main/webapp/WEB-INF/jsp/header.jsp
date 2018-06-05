@@ -23,12 +23,12 @@
 <body>
 <div>
 <nav class="top">
-    <span><a href="/">首页</a></span>
-    <span><a href="#no">发现音乐</a> </span>
-    <span><a href="#no">我的音乐</a> </span>
-    <span><a href="#no">朋友</a> </span>
-    <span><a href="#no">商城</a> </span>
-    <span><a href="#no">音乐人</a> </span>
+    <span><a href="${pageContext.request.contextPath}/">首页</a></span>
+    <span><a href="#">发现音乐</a> </span>
+    <span><a href="#">我的音乐</a> </span>
+    <span><a href="#">朋友</a> </span>
+    <span><a href="#">商城</a> </span>
+    <span><a href="#">音乐人</a> </span>
 
     <span class="float-right">
             <%
