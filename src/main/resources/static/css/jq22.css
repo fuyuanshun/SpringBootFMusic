@@ -7005,7 +7005,7 @@ header .navbar {
 }
 header .navbar > .container .navbar-brand {
   margin-left: 0;
-  background-image: url("/images/login/logo-white.png");
+  background-image: url("/FMusic/images/login/logo-white.png");
   width: 125px;
   height: 28px;
   text-indent: -9000px;
@@ -7015,7 +7015,7 @@ header .navbar > .container .navbar-brand {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   header .navbar > .container .navbar-brand {
-    background-image: url("/images/login/logo-white@2x.png");
+    background-image: url("/FMusic/images/login/logo-white@2x.png");
     -webkit-background-size: 125px 28px;
     -moz-background-size: 125px 28px;
     background-size: 125px 28px;
@@ -7171,7 +7171,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
   background-color: #1a8fb4;
   padding-top: 70px;
   position: relative;
-  background-image: url("/images/login/bg-pattern.png");
+  background-image: url("/FMusic/images/login/bg-pattern.png");
   background-repeat: repeat-x;
   background-position: bottom left;
   z-index: 99;
@@ -7185,7 +7185,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
   #hero .inside {
     min-height: 0;
     padding-top: 0;
-    background-image: url("/images/login/browsers.png");
+    background-image: url("/FMusic/images/login/browsers.png");
     padding-bottom: 300px;
     -webkit-background-size: contain;
     -moz-background-size: contain;
@@ -7239,13 +7239,13 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
   display: block;
   width: 58px;
   height: 58px;
-  background-image: url("/images/login/icon.png");
+  background-image: url("/FMusic/images/login/icon.png");
   margin: 0 auto 30px;
   position: relative;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #hero #subhead .book-icon {
-    background-image: url("/images/login/icon@2x.png");
+    background-image: url("/FMusic/images/login/icon@2x.png");
     -webkit-background-size: 58px 58px;
     -moz-background-size: 58px 58px;
     background-size: 58px 58px;
@@ -7271,11 +7271,11 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
   left: 11px;
   width: 15px;
   height: 15px;
-  background-image: url("/images/login/icon-tail.png");
+  background-image: url("/FMusic/images/login/icon-tail.png");
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #hero #subhead .book-icon .tail {
-    background-image: url("/images/login/icon-tail@2x.png");
+    background-image: url("/FMusic/images/login/icon-tail@2x.png");
     -webkit-background-size: 15px 15px;
     -moz-background-size: 15px 15px;
     background-size: 15px 15px;
@@ -7382,7 +7382,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 .ph-exclusive #browsers-parent #ph-owl #ph-owl-feet {
   width: 109px;
   height: 42px;
-  background-image: url("/images/login/ph-owl-feet.png");
+  background-image: url("/FMusic/images/login/ph-owl-feet.png");
   position: absolute;
   top: 290px;
   left: 90px;
@@ -7394,7 +7394,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   .ph-exclusive #browsers-parent #ph-owl #ph-owl-feet {
-    background-image: url("/images/login/ph-owl-feet@2x.png");
+    background-image: url("/FMusic/images/login/ph-owl-feet@2x.png");
     -webkit-background-size: 109px 42px;
     -moz-background-size: 109px 42px;
     background-size: 109px 42px;
@@ -7403,7 +7403,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 .ph-exclusive #browsers-parent #ph-owl #ph-owl-arml {
   width: 52px;
   height: 106px;
-  background-image: url("/images/login/ph-owl-arml.png");
+  background-image: url("/FMusic/images/login/ph-owl-arml.png");
   position: absolute;
   z-index: 10;
   top: 188px;
@@ -7421,7 +7421,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   .ph-exclusive #browsers-parent #ph-owl #ph-owl-arml {
-    background-image: url("/images/login/ph-owl-arml@2x.png");
+    background-image: url("/FMusic/images/login/ph-owl-arml@2x.png");
     -webkit-background-size: 52px 106px;
     -moz-background-size: 52px 106px;
     background-size: 52px 106px;
@@ -7430,7 +7430,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 .ph-exclusive #browsers-parent #ph-owl #ph-owl-body {
   width: 264px;
   height: 327px;
-  background-image: url("/images/login/ph-owl.png");
+  background-image: url("/FMusic/images/login/ph-owl.png");
   position: absolute;
   top: 0;
   left: 0;
@@ -7438,7 +7438,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   .ph-exclusive #browsers-parent #ph-owl #ph-owl-body {
-    background-image: url("/images/login/ph-owl@2x.png");
+    background-image: url("/FMusic/images/login/ph-owl@2x.png");
     -webkit-background-size: 264px 327px;
     -moz-background-size: 264px 327px;
     background-size: 264px 327px;
@@ -7485,7 +7485,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 .ph-exclusive #browsers-parent #ph-owl #ph-owl-arm {
   width: 101px;
   height: 108px;
-  background-image: url("/images/login/ph-owl-arm.png");
+  background-image: url("/FMusic/images/login/ph-owl-arm.png");
   position: absolute;
   left: 220px;
   top: 120px;
@@ -7507,7 +7507,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   .ph-exclusive #browsers-parent #ph-owl #ph-owl-arm {
-    background-image: url("/images/login/ph-owl-arm@2x.png");
+    background-image: url("/FMusic/images/login/ph-owl-arm@2x.png");
     -webkit-background-size: 101px 108px;
     -moz-background-size: 101px 108px;
     background-size: 101px 108px;
@@ -7516,7 +7516,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 .ph-exclusive #browsers-parent #ph-owl #ph-text {
   width: 299px;
   height: 163px;
-  background-image: url("/images/login/ph-text.png");
+  background-image: url("/FMusic/images/login/ph-text.png");
   position: absolute;
   left: 262px;
   top: -34px;
@@ -7536,7 +7536,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   .ph-exclusive #browsers-parent #ph-owl #ph-text {
-    background-image: url("/images/login/ph-text@2x.png");
+    background-image: url("/FMusic/images/login/ph-text@2x.png");
     -webkit-background-size: 299px 163px;
     -moz-background-size: 299px 163px;
     background-size: 299px 163px;
@@ -7615,7 +7615,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
   -o-transform-origin: 100% 100%;
   -ms-transform-origin: 100% 100%;
   transform-origin: 100% 100%;
-  background-image: url("/images/login/browser-left.png");
+  background-image: url("/FMusic/images/login/browser-left.png");
   -webkit-background-size: 400px 392px;
   -moz-background-size: 400px 392px;
   background-size: 400px 392px;
@@ -7641,7 +7641,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
   -o-transform-origin: 0 100%;
   -ms-transform-origin: 0 100%;
   transform-origin: 0 100%;
-  background-image: url("/images/login/browser-right.png");
+  background-image: url("/FMusic/images/login/browser-right.png");
   -webkit-background-size: 400px 392px;
   -moz-background-size: 400px 392px;
   background-size: 400px 392px;
@@ -7700,7 +7700,7 @@ header .navbar-default .navbar-nav.navbar-right > li > a {
   position: absolute;
   top: 10px;
   left: 60px;
-  background-image: url("/images/login/browser-logo.png");
+  background-image: url("/FMusic/images/login/browser-logo.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -8160,19 +8160,19 @@ hr.dots:before {
   background-size: cover;
 }
 #browser .viewport .slider .example.example-1 {
-  background-image: url("/images/login/example-1.png");
+  background-image: url("/FMusic/images/login/example-1.png");
 }
 #browser .viewport .slider .example.example-2 {
-  background-image: url("/images/login/example-2.png");
+  background-image: url("/FMusic/images/login/example-2.png");
 }
 #browser .viewport .slider .example.example-3 {
-  background-image: url("/images/login/example-3.png");
+  background-image: url("/FMusic/images/login/example-3.png");
 }
 #browser .viewport .slider .example.example-4 {
-  background-image: url("/images/login/example-4.png");
+  background-image: url("/FMusic/images/login/example-4.png");
 }
 #browser .viewport .slider .example.example-5 {
-  background-image: url("/images/login/example-5.png");
+  background-image: url("/FMusic/images/login/example-5.png");
 }
 /* The good stuff */
 #content {
@@ -8214,11 +8214,11 @@ hr.dots:before {
   width: 242px;
   height: 78px;
   display: inline-block;
-  background-image: url("/images/login/logos.png");
+  background-image: url("/FMusic/images/login/logos.png");
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #logos a.logo {
-    background-image: url("/images/login/logos@2x.png");
+    background-image: url("/FMusic/images/login/logos@2x.png");
     -webkit-background-size: 968px 156px;
     -moz-background-size: 968px 156px;
     background-size: 968px 156px;
@@ -8307,7 +8307,7 @@ hr.dots:before {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("/images/login/icon-a.mask.png");
+  background-image: url("/FMusic/images/login/icon-a.mask.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -8369,7 +8369,7 @@ hr.dots:before {
   -moz-background-size: cover;
   background-size: cover;
   z-index: 21;
-  background-image: url("/images/login/icon-a.bookfront-closed.png");
+  background-image: url("/FMusic/images/login/icon-a.bookfront-closed.png");
   -webkit-transform-origin: 0 -88%;
   -moz-transform-origin: 0 -88%;
   -o-transform-origin: 0 -88%;
@@ -8429,7 +8429,7 @@ hr.dots:before {
   position: absolute;
 }
 .icon.b .liquid {
-  background-image: url("/images/login/icon-b.liquid.png");
+  background-image: url("/FMusic/images/login/icon-b.liquid.png");
   height: 9px;
   position: absolute;
   top: 26px;
@@ -8441,7 +8441,7 @@ hr.dots:before {
   -webkit-background-size: contain;
   -moz-background-size: contain;
   background-size: contain;
-  background-image: url("/images/login/icon-b.beakers.png");
+  background-image: url("/FMusic/images/login/icon-b.beakers.png");
   width: 71px;
   height: 64px;
   background-repeat: no-repeat;
@@ -8452,7 +8452,7 @@ hr.dots:before {
   -webkit-background-size: contain;
   -moz-background-size: contain;
   background-size: contain;
-  background-image: url("/images/login/icon-b.beakertop.png");
+  background-image: url("/FMusic/images/login/icon-b.beakertop.png");
   width: 33px;
   height: 17px;
   background-repeat: no-repeat;
@@ -8916,7 +8916,7 @@ hr.dots:before {
 #register #owl-login {
   width: 211px;
   height: 108px;
-  background-image: url("/images/login/owl-login.png");
+  background-image: url("/FMusic/images/login/owl-login.png");
   position: absolute;
   top: -100px;
   left: 50%;
@@ -8925,7 +8925,7 @@ hr.dots:before {
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #login #owl-login,
   #register #owl-login {
-    background-image: url("/images/login/owl-login@2x.png");
+    background-image: url("/FMusic/images/login/owl-login@2x.png");
     -webkit-background-size: 211px 108px;
     -moz-background-size: 211px 108px;
     background-size: 211px 108px;
@@ -8987,7 +8987,7 @@ hr.dots:before {
   position: absolute;
   left: 20px;
   top: 40px;
-  background-image: url("/images/login/owl-login-arm.png");
+  background-image: url("/FMusic/images/login/owl-login-arm.png");
   -webkit-transition: 0.3s ease-out;
   -moz-transition: 0.3s ease-out;
   -o-transition: 0.3s ease-out;
@@ -9002,7 +9002,7 @@ hr.dots:before {
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #login #owl-login .arms .arm,
   #register #owl-login .arms .arm {
-    background-image: url("/images/login/owl-login-arm@2x.png");
+    background-image: url("/FMusic/images/login/owl-login-arm@2x.png");
     -webkit-background-size: 40px 65px;
     -moz-background-size: 40px 65px;
     background-size: 40px 65px;
@@ -9230,7 +9230,7 @@ hr.dots:before {
 #register .owl-signup .owl-body {
   width: 230px;
   height: 288px;
-  background-image: url("/images/login/signup.png");
+  background-image: url("/FMusic/images/login/signup.png");
   z-index: 10;
   position: relative;
   -webkit-transition: 0.3s ease-out;
@@ -9242,7 +9242,7 @@ hr.dots:before {
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #login .owl-signup .owl-body,
   #register .owl-signup .owl-body {
-    background-image: url("/images/login/signup@2x.png");
+    background-image: url("/FMusic/images/login/signup@2x.png");
     -webkit-background-size: 230px 288px;
     -moz-background-size: 230px 288px;
     background-size: 230px 288px;
@@ -9289,7 +9289,7 @@ hr.dots:before {
 }
 #login .owl-signup .owl-arm,
 #register .owl-signup .owl-arm {
-  background-image: url("/images/login/signup-arm.png");
+  background-image: url("/FMusic/images/login/signup-arm.png");
   width: 92px;
   height: 103px;
   position: absolute;
@@ -9309,7 +9309,7 @@ hr.dots:before {
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #login .owl-signup .owl-arm,
   #register .owl-signup .owl-arm {
-    background-image: url("/images/login/signup-arm@2x.png");
+    background-image: url("/FMusic/images/login/signup-arm@2x.png");
     -webkit-background-size: 92px 103px;
     -moz-background-size: 92px 103px;
     background-size: 92px 103px;
@@ -9317,7 +9317,7 @@ hr.dots:before {
 }
 #login .owl-signup .owl-feet,
 #register .owl-signup .owl-feet {
-  background-image: url("/images/login/signup-feet.png");
+  background-image: url("/FMusic/images/login/signup-feet.png");
   width: 150px;
   height: 32px;
   position: absolute;
@@ -9327,7 +9327,7 @@ hr.dots:before {
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #login .owl-signup .owl-feet,
   #register .owl-signup .owl-feet {
-    background-image: url("/images/login/signup-feet@2x.png");
+    background-image: url("/FMusic/images/login/signup-feet@2x.png");
     -webkit-background-size: 150px 32px;
     -moz-background-size: 150px 32px;
     background-size: 150px 32px;
@@ -9418,14 +9418,14 @@ hr.dots:before {
   margin-bottom: 100px;
 }
 #register #signup-background .books {
-  background-image: url("/images/login/books.png");
+  background-image: url("/FMusic/images/login/books.png");
   background-position: -411px bottom;
   position: relative;
   background-repeat: repeat-x;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #register #signup-background .books {
-    background-image: url("/images/login/books@2x.png");
+    background-image: url("/FMusic/images/login/books@2x.png");
     -webkit-background-size: 748px 161px;
     -moz-background-size: 748px 161px;
     background-size: 748px 161px;
@@ -10245,7 +10245,7 @@ footer .middot:before {
   vertical-align: top;
 }
 footer .pf {
-  background-image: url("/images/login/pf-logo.png");
+  background-image: url("/FMusic/images/login/pf-logo.png");
   width: 200px;
   height: 73px;
   background-repeat: no-repeat;
@@ -10258,7 +10258,7 @@ footer .pf {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   footer .pf {
-    background-image: url("/images/login/pf-logo@2x.png");
+    background-image: url("/FMusic/images/login/pf-logo@2x.png");
     -webkit-background-size: 159px 73px;
     -moz-background-size: 159px 73px;
     background-size: 159px 73px;
@@ -10300,14 +10300,14 @@ footer .pf .spacer {
 }
 #error #error-page .container,
 #other #error-page .container {
-  background-image: url("/images/login/books.png");
+  background-image: url("/FMusic/images/login/books.png");
   background-position: -411px bottom;
   background-repeat: repeat-x;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #error #error-page .container,
   #other #error-page .container {
-    background-image: url("/images/login/books@2x.png");
+    background-image: url("/FMusic/images/login/books@2x.png");
     -webkit-background-size: 748px 161px;
     -moz-background-size: 748px 161px;
     background-size: 748px 161px;
@@ -10315,7 +10315,7 @@ footer .pf .spacer {
 }
 #error #error-page .owl-404,
 #other #error-page .owl-404 {
-  background-image: url("/images/login/404.png");
+  background-image: url("/FMusic/images/login/404.png");
   margin: auto;
   width: 239px;
   height: 333px;
@@ -10325,7 +10325,7 @@ footer .pf .spacer {
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #error #error-page .owl-404,
   #other #error-page .owl-404 {
-    background-image: url("/images/login/404@2x.png");
+    background-image: url("/FMusic/images/login/404@2x.png");
     -webkit-background-size: 239px 333px;
     -moz-background-size: 239px 333px;
     background-size: 239px 333px;
@@ -10333,7 +10333,7 @@ footer .pf .spacer {
 }
 #error #error-page .owl-maintenance,
 #other #error-page .owl-maintenance {
-  background-image: url("/images/login/maintenance.png");
+  background-image: url("/FMusic/images/login/maintenance.png");
   margin: auto;
   width: 229px;
   height: 270px;
@@ -10344,7 +10344,7 @@ footer .pf .spacer {
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #error #error-page .owl-maintenance,
   #other #error-page .owl-maintenance {
-    background-image: url("/images/login/maintenance@2x.png");
+    background-image: url("/FMusic/images/login/maintenance@2x.png");
     -webkit-background-size: 229px 270px;
     -moz-background-size: 229px 270px;
     background-size: 229px 270px;
@@ -10352,7 +10352,7 @@ footer .pf .spacer {
 }
 #error #error-page .owl-500,
 #other #error-page .owl-500 {
-  background-image: url("/images/login/500.png");
+  background-image: url("/FMusic/images/login/500.png");
   margin: auto;
   width: 280px;
   height: 266px;
@@ -10363,7 +10363,7 @@ footer .pf .spacer {
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #error #error-page .owl-500,
   #other #error-page .owl-500 {
-    background-image: url("/images/login/500@2x.png");
+    background-image: url("/FMusic/images/login/500@2x.png");
     -webkit-background-size: 280px 266px;
     -moz-background-size: 280px 266px;
     background-size: 280px 266px;
@@ -10512,7 +10512,7 @@ etc */ .popover h3 {
   z-index: 1;
 }
 #blog .blog-header .container .books {
-  background-image: url("/images/login/books-small.png");
+  background-image: url("/FMusic/images/login/books-small.png");
   background-position: -411px bottom;
   background-repeat: repeat-x;
   height: 140px;
@@ -10526,7 +10526,7 @@ etc */ .popover h3 {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #blog .blog-header .container .books {
-    background-image: url("/images/login/books-small@2x.png");
+    background-image: url("/FMusic/images/login/books-small@2x.png");
     -webkit-background-size: 748px 161px;
     -moz-background-size: 748px 161px;
     background-size: 748px 161px;
@@ -10555,14 +10555,14 @@ etc */ .popover h3 {
 #blog .blog-header .container .owl {
   width: 172px;
   height: 250px;
-  background-image: url("/images/login/blogowl.png");
+  background-image: url("/FMusic/images/login/blogowl.png");
   position: absolute;
   top: 0;
   left: 35px;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #blog .blog-header .container .owl {
-    background-image: url("/images/login/blogowl@2x.png");
+    background-image: url("/FMusic/images/login/blogowl@2x.png");
     -webkit-background-size: 172px 250px;
     -moz-background-size: 172px 250px;
     background-size: 172px 250px;

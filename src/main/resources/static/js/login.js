@@ -4,7 +4,7 @@ $(function () {
             var json = $("#loginform").serialize();
 
             $.ajax({
-                url : "/loginDeal",
+                url : "/FMusic/loginDeal",
                 type : "post",
                 async : true,
                 data : json,
@@ -12,7 +12,7 @@ $(function () {
                     if(data == "loginError") {
                         alert("用户名密码不匹配!")
                     } else if (data == "loginSuccess") {
-                        $(window).attr('location', "/");
+                        $(window).attr('location', "/FMusic/");
                     } else if (data == "userIsNotActive") {
                         alert("用户名未激活!");
                     }

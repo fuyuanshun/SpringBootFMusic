@@ -1,6 +1,6 @@
 $(function () {
     $("#gologin").click(function(){
-        $(window).attr('location', '/login');
+        $(window).attr('location', '/FMusic/login');
     }
 )
 
@@ -73,7 +73,7 @@ $(function () {
             var json = $("#myform").serialize();
             console.info(json);
             $.ajax({
-                url : "/registerDeal",
+                url : "/FMusic/registerDeal",
                 type : "post",
                 async : true,
                 data : json,

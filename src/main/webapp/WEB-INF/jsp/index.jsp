@@ -73,16 +73,16 @@
     <div class="carousel-inner" role="listbox">
         <!-- 每一个.item就是单个轮播项目，注意默认要给第一个轮播项目加上active，表示为焦点 -->
         <div class="carousel-item active">
-            <a href="/hotmusic"><img src="images/music/music1.png" class="img-rounded"></a>
+            <a href="/FMusic/hotmusic"><img src="images/music/music1.png" class="img-rounded"></a>
         </div>
         <div class="carousel-item">
-            <a href="/hotmusic"><img src="images/music/music2.png" class="img-circle"></a>
+            <a href="/FMusic/music"><img src="images/music/music2.png" class="img-circle"></a>
         </div>
         <div class="carousel-item">
-            <a href="/music"><img src="images/music/music3.png" class="img-thumbnail"></a>
+            <a href="/FMusic/hotmusic"><img src="images/music/music3.png" class="img-thumbnail"></a>
         </div>
         <div class="carousel-item">
-            <a href="/music"><img src="images/music/music4.png" class="img-rounded"></a>
+            <a href="/FMusic/music"><img src="images/music/music4.png" class="img-rounded"></a>
         </div>
     </div>
     <!-- 图片轮播上左右两个控制按钮，分别点击可以滚动到上一张和下一张 -->

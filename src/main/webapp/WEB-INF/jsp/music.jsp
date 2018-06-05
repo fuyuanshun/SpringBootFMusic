@@ -22,7 +22,7 @@
     }
 
     body {
-        background: url(/images/login.jpg) no-repeat;
+        background: url(/FMusic/images/login.jpg) no-repeat;
     }
 </style>
 

@@ -38,7 +38,7 @@
     position: absolute;
     top: 44px;
     bottom: 50px;
-    background:url("/images/login.jpg");
+    background:url("/FMusic/images/login.jpg");
     background-size:100% 100%;
     /*内容超出范围部分滚动*/
     overflow: scroll;
