@@ -79,7 +79,7 @@
             <a href="/FMusic/music"><img src="images/music/music2.png" class="img-circle"></a>
         </div>
         <div class="carousel-item">
-            <a href="/FMusic/hotmusic"><img src="images/music/music3.png" class="img-thumbnail"></a>
+            <a href="/FMusic/resource"><img src="images/music/music3.png" class="img-thumbnail"></a>
         </div>
         <div class="carousel-item">
             <a href="/FMusic/music"><img src="images/music/music4.png" class="img-rounded"></a>

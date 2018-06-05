@@ -11,7 +11,6 @@
  <script type="text/javascript" src="${pageContext.request.contextPath}/js/jplayer/jquery.jplayer.js"></script>
  <script type="text/javascript" src="${pageContext.request.contextPath}/js/jplayer/jplayer.playlist.min.js"></script>
  <script type="text/javascript" src="${pageContext.request.contextPath}/js/music.js"></script>
-
 </head>
 
 <style type="text/css">
