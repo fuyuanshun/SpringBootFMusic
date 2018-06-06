@@ -29,13 +29,13 @@
         color: darkred;
     }
 
-    .row {
+    /*.row {
         margin-top: 4px;
         margin-bottom: 4px;
     }
     .row img{
         width:140px; height:140px
-    }
+    }*/
 </style>
 
 <body>
@@ -101,9 +101,9 @@
 </div>
 <%--轮播图end--%>
 
-<div class="container">
+<div>
     <%--顶部显示text Div--%>
-    <div class="tab border-bottom">
+    <div class="tab border-bottom container">
         <h4 style="display: inline-block;"><a href="#">热门推荐</a></h4>
         <a href="#">华语</a>
         <span class="line">|</span>
@@ -116,43 +116,38 @@
         <a href="#">电子</a>
     </div>
     <%--显示图片的大div--%>
-    <div class="col-xs-12 row">
-        <div class="col-xs-3 row">
-            <img src="images/music/musicbg1.png">
-            <div class="carousel-caption">标题1</div>
-        </div>
-        <div class="col-xs-3 row">
-            <img src="images/music/musicbg2.png">
-            <div class="carousel-caption">标题2</div>
-        </div>
-        <div class="col-xs-3 row">
-            <img src="images/music/musicbg3.png">
-            <div class="carousel-caption">标题3</div>
-        </div>
-        <div class="col-xs-3 row">
-            <img src="images/music/musicbg3.png">
-            <div class="carousel-caption">标题4</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <img src="images/music/musicbg1.png">
+            </div>
+            <div class="col-xs-3">
+                <img src="images/music/musicbg2.png">
+            </div>
+            <div class="col-xs-3">
+                <img src="images/music/musicbg3.png">
+            </div>
+            <div class="col-xs-3">
+                <img src="images/music/musicbg2.png">
+            </div>
         </div>
     </div>
-        <div class="col-xs-12 row">
-            <div class="col-xs-3 row">
-                <img src="images/music/musicbg2.png">
-                <div class="carousel-caption">标题5</div>
-            </div>
-            <div class="col-xs-3 row">
-                <img src="images/music/musicbg1.png">
-                <div class="carousel-caption">标题6</div>
-            </div>
-            <div class="col-xs-3 row">
-                <img src="images/music/musicbg1.png">
-                <div class="carousel-caption">标题7</div>
-            </div>
-            <div class="col-xs-3 row">
-                <img src="images/music/musicbg2.png">
-                <div class="carousel-caption">标题8</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <img src="images/music/musicbg2.png">
+                </div>
+                <div class="col-xs-3">
+                    <img src="images/music/musicbg3.png">
+                </div>
+                <div class="col-xs-3">
+                    <img src="images/music/musicbg2.png">
+                </div>
+                <div class="col-xs-3">
+                    <img src="images/music/musicbg1.png">
+                </div>
             </div>
         </div>
 </div>
-
 </body>
 </html>
