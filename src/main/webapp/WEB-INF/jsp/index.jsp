@@ -103,7 +103,7 @@
 
 <div>
     <%--顶部显示text Div--%>
-    <div class="tab border-bottom container">
+    <div class="tab border-bottom container border-danger">
         <h4 style="display: inline-block;"><a href="#">热门推荐</a></h4>
         <a href="#">华语</a>
         <span class="line">|</span>
@@ -116,38 +116,46 @@
         <a href="#">电子</a>
     </div>
     <%--显示图片的大div--%>
-    <div class="container">
+    <div class="container" style="margin-top: 10px">
         <div class="row">
             <div class="col-xs-3">
-                <img src="images/music/musicbg1.png">
+                <a href="#"><img src="images/music/musicbg1.png"></a>
+                <p class="text-muted"><a href="#">标题</a></p>
             </div>
             <div class="col-xs-3">
-                <img src="images/music/musicbg2.png">
+                <a href="#"><img src="images/music/musicbg1.png"></a>
+                <p class="text-muted"><a href="#">标题</a></p>
             </div>
             <div class="col-xs-3">
-                <img src="images/music/musicbg3.png">
+                <a href="#"><img src="images/music/musicbg1.png"></a>
+                <p class="text-muted"><a href="#">标题</a></p>
             </div>
             <div class="col-xs-3">
-                <img src="images/music/musicbg2.png">
+                <a href="#"><img src="images/music/musicbg1.png"></a>
+                <p class="text-muted"><a href="#">标题</a></p>
             </div>
         </div>
     </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-3">
-                    <img src="images/music/musicbg2.png">
-                </div>
-                <div class="col-xs-3">
-                    <img src="images/music/musicbg3.png">
-                </div>
-                <div class="col-xs-3">
-                    <img src="images/music/musicbg2.png">
-                </div>
-                <div class="col-xs-3">
-                    <img src="images/music/musicbg1.png">
-                </div>
+    <div class="container" style="margin-top: 10px">
+        <div class="row">
+            <div class="col-lg-3">
+                <a href="#"><img src="images/music/musicbg2.png"></a>
+                <p class="text-muted"><a href="#">标题</a></p>
+            </div>
+            <div class="col-xs-3">
+                <a href="#"><img src="images/music/musicbg3.png"></a>
+                <p class="text-muted"><a href="#">标题</a></p>
+            </div>
+            <div class="col-xs-3">
+                <a href="#"><img src="images/music/musicbg2.png"></a>
+                <p class="text-muted"><a href="#">标题</a></p>
+            </div>
+            <div class="col-xs-3">
+                <a href="#"><img src="images/music/musicbg1.png"></a>
+                <p class="text-muted"><a href="#">标题</a></p>
             </div>
         </div>
+    </div>
 </div>
 </body>
 </html>

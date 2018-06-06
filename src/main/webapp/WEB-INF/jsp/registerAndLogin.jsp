@@ -34,7 +34,7 @@
     <%--Tab panes--%>
     <div class="tab-content">
         <%--登陆DIV--%>
-        <div id="login" class="tab-pane active container">
+        <div id="login" class="tab-pane active container" style="height:600px">
             <div class="wrapper">
                 <div class="login">
                     <form action="#" method="post" class="container offset1 loginform" id="loginform">
@@ -64,9 +64,7 @@
                             </div>
                         </div>
                         <div class="form-actions"><a href="${pageContext.request.contextPath}/forgetPassword"
-                                                     tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a><a
-                                href="${pageContext.request.contextPath}/register" tabindex="6"
-                                class="btn btn-link text-muted">注册</a>
+                                                     tabindex="5" class="btn pull-left btn-link text-muted">忘记密码?</a>
                             <input type="submit" tabindex="4" class="btn btn-primary" value="登陆"/>
                         </div>
                     </form>
@@ -84,7 +82,8 @@
 
         <%--注册DIV--%>
         <div class="tab-pane container" id="register">
-            <form method="post" action="" id="myform" class="form-control">
+            <h3 class="text-muted text-center">请填写注册信息</h3>
+            <form method="post" action="" id="myform">
                 <div class="col-sm-10">
                     <input type="text" placeholder="请输入用户名" name="username" id="username" class="form-control"
                            required/>
@@ -115,7 +114,7 @@
                     <label for="age" style="color: red;"></label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" placeholder="不得多于11个字" name="phone" id="phone" class="form-control" required/>
+                    <input type="text" placeholder="请输入您的11位手机号" name="phone" id="phone" class="form-control" required/>
                     <label for="phone" style="color: red;"></label>
                 </div>
                 <div class="col-sm-10">
