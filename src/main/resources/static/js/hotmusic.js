@@ -10,31 +10,31 @@ function getTitles () {
     })
 };
 
-//初始化数组
-function getJson() {
+//获得音乐列表
+function getList() {
+    //先初始化数组
     getTitles();
-    alert("1");
-    var json = "[";
-    for(var i=0; i<titles.length; i++){
-        json += '{"mp3":"'+mp3s[i]+'" , "title":"'+titles[i]+'"},'
-    }
-    //返回初始化的json字符串
-    return json;
+    //休眠500毫秒再进行下一步操作，为了确保数组初始化完成
+    setTimeout(function () {
+        var json = "[";
+        for(var i=0; i<titles.length; i++){
+            json += '{"mp3":"'+mp3s[i]+'" , "title":"'+titles[i]+'"},'
+        }
+        json = json.substr(0, json.length - 1);
+        json = json + "]";
+        //将json字符串转化为json对象
+        json = JSON.parse(json);
+        var description = 'Welcome FMusic';
+        $('body').ttwMusicPlayer(json, {
+            autoPlay:false,
+            description:description,
+            jPlayer:{
+                swfPath: '/js/jplayer'
+            }
+        });
+    }, 500)
 };
 
 $(document).ready(function(){
-    var json = getJson();
-    //截掉json字符串的最后一位字符
-    json = json.substr(0, json.length - 1);
-    json = json + "]";
-    //将json字符串转化为json对象
-    json = JSON.parse(json);
-    var description = 'Welcome FMusic';
-    $('body').ttwMusicPlayer(json, {
-        autoPlay:false,
-        description:description,
-        jPlayer:{
-            swfPath: '/js/jplayer'
-        }
-    });
+    getList();
 });
