@@ -51,7 +51,7 @@
 <%--搜索end--%>
 
 <%--轮播图start--%>
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2000">
     <!-- ol标签是图片轮播的控制点 -->
     <ol class="carousel-indicators">
         <!--
