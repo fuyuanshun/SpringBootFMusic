@@ -13,6 +13,7 @@ function getTitles () {
 function getJson() {
     getTitles();
     alert("1");
+    debugger;
     var json = "[";
     for(var i=0; i<titles.length; i++){
         json += '{"mp3":"'+mp3s[i]+'" , "title":"'+titles[i]+'"},'

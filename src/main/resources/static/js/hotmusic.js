@@ -30,7 +30,6 @@ $(document).ready(function(){
     //将json字符串转化为json对象
     json = JSON.parse(json);
     var description = 'Welcome FMusic';
-    // alert(myPlaylist);
     $('body').ttwMusicPlayer(json, {
         autoPlay:false,
         description:description,

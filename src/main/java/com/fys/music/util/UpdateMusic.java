@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.*;
 
 /**
- * 添加音乐链接到数据库.
+ * 将数据库的音乐读取到json文件中
  */
 public class UpdateMusic {
     static String url = "jdbc:mysql://localhost/fmusic?characterEncoding=UTF-8";

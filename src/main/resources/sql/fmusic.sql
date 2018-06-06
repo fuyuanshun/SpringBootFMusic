@@ -24,3 +24,8 @@ create table resource (
 id int primary key auto_increment not null,
 magnet varchar(70) not null
 );
+
+create table music
+ (id int primary key auto_increment,
+ name varchar(30) not null,
+ path varchar(100) not null));
