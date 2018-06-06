@@ -1,6 +1,7 @@
 var titles = new Array();
 var mp3s = new Array();
 
+//获取json文件的数据
 function getJson() {
     getTitles(titles, mp3s);
     var json = "[";
@@ -10,6 +11,7 @@ function getJson() {
     return json;
 };
 
+//初始化数组内容
 function getTitles(titles, mp3s) {
     $.getJSON("/FMusic/json/list.json", function (data) {
         $.each(data, function (infoIndex, info) {
@@ -21,6 +23,7 @@ function getTitles(titles, mp3s) {
 
 $(function(){
     getTitles(titles, mp3s);
+    //休眠500毫秒，为了确保数组初始化完成
     setTimeout(function () {
         var json = getJson();
         json = json.substr(0, json.length - 1);
