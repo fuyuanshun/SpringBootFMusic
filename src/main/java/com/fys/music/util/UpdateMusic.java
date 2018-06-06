@@ -13,8 +13,8 @@ public class UpdateMusic {
     static String password = "root";
 
     public static void main(String[] args) {
-        String path = Class.class.getClass().getResource("/").getPath();
-        String filename = path + "static/json/list.json";
+        String path = System.getProperty("user.dir");
+        String filename = path + "\\src\\main\\resources\\static\\json\\list.json";
         Map<String, String> musics = queryMusicList();
         writeToFile(musics, filename);
     }

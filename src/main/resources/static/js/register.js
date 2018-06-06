@@ -82,7 +82,7 @@ $(function () {
                         alert("用户名已经存在");
                     } else if (data == "registerSuccess") {
                         alert("注册成功!邮件已经发送至您的邮箱，请先激活");
-                        $(window).attr('location', '/login');
+                        $(window).attr('location', '/FMusic/login');
                     } else if (data == "emailIsExist") {
                         alert("邮箱已经被使用!");
                     } else if (data == "validateCodeERROR") {

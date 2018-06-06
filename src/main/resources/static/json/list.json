@@ -1,74 +1,69 @@
 [
-  {
-    "mp3": "http://47.106.191.205:8080/FMusic/auto/we.mp3",
-    "title" : "我们-陈奕迅",
-    "artist" : "FMusic",
-    "rating" : 4,
-    "buy" : "#",
-    "duration" : "2:30",
-    "cover" : "auto/1.png"
-  },
-  {
-    "mp3" : "http://47.106.191.205:8080/FMusic/auto/zdqc.mp3",
-    "title" : "纸短情长",
-    "artist" : "FMusic",
-    "rating" : 4,
-    "buy" : "#",
-    "duration" : "2:31",
-    "cover" : "auto/1.png"
-  },
-  {
-    "mp3" : "http://47.106.191.205:8080/FMusic/auto/qxzc.mp3",
-    "title" : "裙下之臣-陈奕迅",
-    "artist" : "FMusic",
-    "rating" : 4,
-    "buy" : "#",
-    "duration" : "2:10",
-    "cover" : "auto/1.png"
-  },
-  {
-    "title" :"Hidden",
-    "mp3" :"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
-    "oga" :"http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg"
-  },
-  {
-    "title":"Lentement",
-    "mp3":"http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
-    "oga":"http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg"
-  },
-  {
-    "title":"Lismore",
-    "mp3":"http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3",
-    "oga":"http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg"
-  },
-  {
-    "title":"The Separation",
-    "mp3":"http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3",
-    "oga":"http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg"
-  },
-  {
-    "title":"Beside Me",
-    "mp3":"http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3",
-    "oga":"http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg"
-  },
-  {
-    "title":"Bubble",
-    "mp3":"http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
-    "oga":"http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-  },
-  {
-    "title" : "Stirring of a Fool",
-    "mp3" : "http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3",
-    "oga" :"http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg"
-  },
-  {
-    "title" : "Partir",
-    "mp3" : "http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3",
-    "oga" : "http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg"
-  },
-  {
-    "title" : "Thin Ice",
-    "mp3" : "http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3",
-    "oga" : "http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg"
-  }
+{
+"title":"我的一个道姑朋友", "mp3":"http://47.106.191.205:8080/repo/music/wdygdgpy.mp3"
+},
+{
+"title":"Stirring of a Fool", "mp3":"http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3"
+},
+{
+"title":"Lismore", "mp3":"http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3"
+},
+{
+"title":"纸短情长", "mp3":"http://47.106.191.205:8080/repo/music/zdqc.mp3"
+},
+{
+"title":"The Separation", "mp3":"http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3"
+},
+{
+"title":"Partir", "mp3":"http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3"
+},
+{
+"title":"Lentement", "mp3":"http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3"
+},
+{
+"title":"裙下之臣", "mp3":"http://47.106.191.205:8080/repo/music/qxzc.mp3"
+},
+{
+"title":"Miss You", "mp3":"http://47.106.191.205:8080/repo/music/MissYou.mp3"
+},
+{
+"title":"Our Time Has Come", "mp3":"http://47.106.191.205:8080/repo/music/OurTimeHasCome.mp3"
+},
+{
+"title":"Thin Ice", "mp3":"http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3"
+},
+{
+"title":"Bubble", "mp3":"http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3"
+},
+{
+"title":"下一个天亮", "mp3":"http://47.106.191.205:8080/repo/music/xygtl.mp3"
+},
+{
+"title":"Into Ether", "mp3":"http://47.106.191.205:8080/repo/music/IntoEther.mp3"
+},
+{
+"title":"像风一样", "mp3":"http://47.106.191.205:8080/repo/music/xfyy.mp3"
+},
+{
+"title":"我们", "mp3":"http://47.106.191.205:8080/repo/music/we.mp3"
+},
+{
+"title":"Hidden", "mp3":"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3"
+},
+{
+"title":"Beside Me", "mp3":"http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3"
+},
+{
+"title":"Shadowx", "mp3":"http://47.106.191.205:8080/repo/music/Shadowx.mp3.mp3"
+},
+{
+"title":"Existence", "mp3":"http://47.106.191.205:8080/repo/music/Existence.mp3"
+},
+{
+"title":"Eventide", "mp3":"http://47.106.191.205:8080/repo/music/Eventide.mp3"
+},
+{
+"title":"追光者", "mp3":"http://47.106.191.205:8080/repo/music/zgz.mp3"
+}
+
 ]
