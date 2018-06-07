@@ -5,10 +5,11 @@ import java.sql.*;
 import java.util.*;
 
 /**
+ * 先执行UpdateMusicDB将音乐列表插入数据库，然后再执行此方法
  * 将数据库的音乐读取到json文件中
  */
-public class UpdateMusic {
-    static String url = "jdbc:mysql://localhost/fmusic?characterEncoding=UTF-8";
+public class UpdateMusicList {
+    static String dbName = "fmusic";
     static String username = "root";
     static String password = "root";
 
@@ -17,6 +18,8 @@ public class UpdateMusic {
         String filename = path + "\\src\\main\\resources\\static\\json\\list.json";
         Map<String, String> musics = queryMusicList();
         writeToFile(musics, filename);
+
+        MysqlUtil.close();
     }
 
     private static void writeToFile(Map<String, String> music, String fileName) {
@@ -54,8 +57,8 @@ public class UpdateMusic {
         Map<String, String> hashMap = new HashMap<>();
         ResultSet resultSet = null;
         String sql = "select * from music";
-        Connection connection = getConn(url, username, password);
-        PreparedStatement preparedStatement = getPreparedStatement(connection, sql);
+        Connection connection = MysqlUtil.getConn(dbName, username, password);
+        PreparedStatement preparedStatement = MysqlUtil.getPreparedStatement(connection, sql);
         try {
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -82,28 +85,5 @@ public class UpdateMusic {
             }
         }
         return hashMap;
-    }
-
-    public static PreparedStatement getPreparedStatement(Connection connection, String sql) {
-        PreparedStatement preparedStatement = null;
-        try {
-            preparedStatement = connection.prepareStatement(sql);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return preparedStatement;
-    }
-
-    private static Connection getConn(String url, String username, String password) {
-        Connection connection = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(url, username, password);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return connection;
     }
 }
