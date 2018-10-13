@@ -28,25 +28,19 @@
         text-decoration: none;
         color: darkred;
     }
-
-    /*.row {
-        margin-top: 4px;
-        margin-bottom: 4px;
-    }
-    .row img{
-        width:140px; height:140px
-    }*/
 </style>
 
 <body>
 <%--搜索start--%>
 <div class="container">
-    <div class="input-group">
-        <input type="text" class="form-control col-sm-2" style="float: right" placeholder="请输入搜索内容">
-        <span class="input-group-btn">
-        <button class="btn btn-primary" type="button">搜索</button>
-      </span>
-    </div>
+    <form action="${pageContext.request.contextPath}/search" method="post" id="searchForm">
+        <div class="input-group">
+                <input type="text" class="form-control col-sm-2" style="float: right" placeholder="请输入搜索内容" name="searchContent">
+                <span class="input-group-btn">
+                    <input class="btn btn-primary" type="submit" id="search" value="搜索"/>
+                </span>
+        </div>
+    </form>
 </div>
 <%--搜索end--%>
 

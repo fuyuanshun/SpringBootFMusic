@@ -18,7 +18,7 @@ public class UpdateMusicDB {
 
     public static void main(String[] args) {
         String dirName = "F:/CloudMusic";
-        String path = "http://47.106.191.205:8080/repo/music/";
+        String path = "http://139.199.198.151:8080/repo/music/";
         List<String> musicList = getMusicList(dirName);
         for (String music : musicList) {
             insertMusic(music, path+music);

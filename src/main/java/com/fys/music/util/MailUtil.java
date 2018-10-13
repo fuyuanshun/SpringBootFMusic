@@ -49,7 +49,7 @@ public class MailUtil {
         Transport transport = null;
         try {
             transport = session.getTransport();
-            transport.connect("849485789@qq.com", "fbbxddkitdspbeag");
+            transport.connect("849485789@qq.com", "fihzyhyxdwuibfag");
             transport.sendMessage(msg, msg.getAllRecipients());
             transport.close();
         } catch (NoSuchProviderException e) {

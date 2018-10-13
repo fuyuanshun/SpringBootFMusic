@@ -6,7 +6,7 @@ $(function () {
         submitHandler: function() {
             var json = $("#getPassword").serialize();
             $.ajax({
-                url : "/forgetPasswordDeal",
+                url : "/FMusic/forgetPasswordDeal",
                 data : json,
                 type : "post",
                 async : true,
@@ -15,7 +15,7 @@ $(function () {
                         alert("邮箱还没有注册用户！请先注册!");
                     } else if(data == "success"){
                         alert("重置密码邮件已经发送，请登陆邮箱进行重置!")
-                        $(window).attr('location', '/login');
+                        $(window).attr('location', '/FMusic/login');
                     }
                 },
                 error : function () {

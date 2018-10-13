@@ -43,7 +43,7 @@ public class FMusicServiceImpl implements FMusicService {
     @Override
     public String registerDeal(String username, String password, String password2, String email, String sex, Integer age, String birthday, String hobby, String phone, String address, String sessionCode, String validateCode) {
         //服务器地址
-        String path = "47.106.191.205:8080";
+        String path = "139.199.198.151:8080";
         String isexist = selectByUsername(username);
         String mail = selectMailIsExist(email);
 
@@ -170,10 +170,13 @@ public class FMusicServiceImpl implements FMusicService {
      */
     @Override
     public void forgetPasswordDeal(String email) {
+        //服务器地址
+        String path = "139.199.198.151:8080";
+
         String validateCode = UUID.randomUUID().toString();
         validateCode = validateCode.replace("-", "");
         try {
-            MailUtil.sendTo("<a href='localhost:8080/resetPassword?url='"+validateCode+">请点击修改密码</a> 如果链接无法点击，请复制以下链接到浏览器: <a>localhost:8080/resetPassword?validateCode="+validateCode+"&email="+email+"</a>", email);
+            MailUtil.sendTo("<a href='" + path + "/FMusic/resetPassword?url='"+validateCode+">请点击修改密码</a> 如果链接无法点击，请复制以下链接到浏览器: <a>" + path + "/FMusic/resetPassword?validateCode="+validateCode+"&email="+email+"</a>", email);
             updateValidateCode(validateCode, email);
         } catch (Exception e) {
             e.printStackTrace();
@@ -248,7 +251,10 @@ public class FMusicServiceImpl implements FMusicService {
     public String updatePassword(String username, String password, String password2, String email) {
         if(null != username && null != password && null != password2 && password.equals(password2)) {
             if(selectUsernameByEmail(email).equals(username)) {
-                FMusicDao.updatePassword(username, password);
+                FMusicDao.updatePassword(username, MD5Util.getMD5(password));
+                String validateCode = UUID.randomUUID().toString();
+                validateCode = validateCode.replace("-", "");
+                updateValidateCode(validateCode, email);
                 return "updateSuccess";
             } else {
                 return "updateError";

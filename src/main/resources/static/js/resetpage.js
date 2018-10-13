@@ -28,14 +28,14 @@ $(function () {
         submitHandler: function() {
             var json = $("#resetForm").serialize();
             $.ajax({
-                url: "/updatePassword",
+                url: "/FMusic/updatePassword",
                 type: "post",
                 data: json,
                 async: true,
                 success: function (data, textStatus) {
                     if(data == "updateSuccess") {
                         alert("修改用户密码成功!");
-                        $(window).attr('location', '/login');
+                        $(window).attr('location', '/FMusic/login');
                     } else if (data == "updateError") {
                         alert("用户名与邮箱不一致!");
                     }
