@@ -16,7 +16,7 @@
          * 刷新验证码
          */
         function changeImg() {
-            document.getElementById("validateCodeImg").src = "/drawImage?" + Math.random();
+            document.getElementById("validateCodeImg").src = "/FMusic/drawImage?" + Math.random();
         }
     </script>
 </head>
