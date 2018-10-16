@@ -19,6 +19,8 @@
             document.getElementById("validateCodeImg").src = "/FMusic/drawImage?" + Math.random();
         }
     </script>
+    <%--使用js实现的生日下拉--%>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/birthdayByJS.js"></script>
 </head>
 
 <body>
@@ -101,11 +103,9 @@
                            class="form-control" required/>
                     <label for="password2" style="color: red;"></label>
                 </div>
+
                 <div class="col-sm-10">
-                    <input type="text" placeholder="请输入邮箱地址" name="email" id="email" class="form-control" required/>
-                    <label for="email" style="color: red;"></label>
-                </div>
-                <div class="col-sm-10">
+                    <span>性别:</span>
                     男<input type="radio" value="男" name="sex" required>
                     女<input type="radio" value="女" name="sex" required>
                 </div>
@@ -118,18 +118,35 @@
                     <label for="phone" style="color: red;"></label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" name="birthday" id="birthday" class="form-control" placeholder="请输入生日" required/>
-                    <label for="birthday" style="color: red;"></label>
+                    <span>出生日期:</span>
+                    <select onchange="setDays()" id="year" name="year">
+                    </select>
+                    <span>年</span>
+                    <select onchange="setDays()" id="month" name="month">
+                    </select>
+                    <span>月</span>
+                    <select id="day" name="day">
+                    </select>
+                    <span>日</span>
                 </div>
                 <div class="col-sm-10">
                     <input type="text" name="hobby" id="hobby" class="form-control" placeholder="请输入您的爱好" required/>
                     <label for="hobby" style="color: red;"></label>
                 </div>
+
                 <div class="col-sm-10">
                     <input type="text" name="address" id="address" class="form-control" placeholder="请输入您的居住地址"
                            required/>
                     <label for="address" style="color: red;"></label>
                 </div>
+
+                <div class="col-sm-10">
+                    <input type="text" placeholder="请输入邮箱地址" name="email" id="email" class="form-control-lg" required/>
+                    <input type="button" id="verfCode" name="verfCode" class="btn btn-success" value="发送验证码"/><br>
+                    <input type="text" id="emailCode" name="emailCode" class="form-control-lg" placeholder="请输入您邮箱收到的验证码">
+                    <label for="emailCode" style="color: red;"></label>
+                </div>
+
                 <div class="input-group input-group-md">
                     <div class="col-sm-5">
                         <input type="text" name="validateCode" id="validateCode" class="form-control"
