@@ -13,7 +13,7 @@ import java.util.Properties;
  * 根据自己的邮箱修改发件人和密码
  */
 public class MailUtil {
-    public static boolean sendTo(String body, String receiveMailAccount) {
+    public static boolean sendTo(String body, String receiveMailAccount, String title) {
 
         Properties props = new Properties();
 
@@ -41,7 +41,7 @@ public class MailUtil {
 
         Message msg = null;
         try {
-            msg = createMimeMessage(session, "849485789@qq.com", receiveMailAccount, body);
+            msg = createMimeMessage(session, "849485789@qq.com", receiveMailAccount, body, title);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class MailUtil {
     /**
      * 定义一封邮件
      */
-    public static MimeMessage createMimeMessage(Session session, String sendMail, String receiveMail, String body)
+    public static MimeMessage createMimeMessage(Session session, String sendMail, String receiveMail, String body, String title)
             throws Exception {
         // 1. 创建一封邮件
         MimeMessage message = new MimeMessage(session);
@@ -77,7 +77,7 @@ public class MailUtil {
         message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail, "XX用户", "UTF-8"));
 
         // 4. Subject: 邮件主题
-        message.setSubject("激活您的帐号", "UTF-8");
+        message.setSubject(title, "UTF-8");
 
         // 5. Content: 邮件正文（可以使用html标签）
         message.setContent(body, "text/html;charset=UTF-8");

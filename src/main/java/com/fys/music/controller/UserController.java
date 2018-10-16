@@ -1,9 +1,13 @@
 package com.fys.music.controller;
 
 import com.fys.music.service.FMusicService;
+import com.fys.music.util.CreateVerfCode;
+import com.fys.music.util.MailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,30 +33,30 @@ public class UserController {
      * 用户注册处理
      */
     @RequestMapping("/registerDeal")
-    public void registerDeal(HttpServletRequest req, HttpServletResponse resp) {
-        PrintWriter print = null;
-        try {
-            print = resp.getWriter();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @ResponseBody
+    public String registerDeal(HttpServletRequest req, HttpServletResponse resp) {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String password2 = req.getParameter("password2");
         String email = req.getParameter("email");
         String sex = req.getParameter("sex");
         Integer age = Integer.parseInt(req.getParameter("age"));
-        String birthday = req.getParameter("birthday");
+        String year = req.getParameter("year");
+        String month = req.getParameter("month");
+        String day = req.getParameter("day");
+        String birthday = year + "-" + month + "-" + day;
         String hobby = req.getParameter("hobby");
         String phone = req.getParameter("phone");
+        String emailCode = req.getParameter("emailCode");
+        String emailCodeWithSession = (String)req.getSession().getAttribute("emailCode");
         String address = req.getParameter("address");
         //用户填写的验证码
         String validateCode = req.getParameter("validateCode");
         //session中的验证码
         String sessionCode = (String) req.getSession().getAttribute("checkCode");
 
-        String ret = userService.registerDeal(username, password, password2, email, sex, age, birthday, hobby, phone, address, sessionCode, validateCode);
-        print.write(ret);
+        String ret = userService.registerDeal(username, password, password2, email, sex, age, birthday, hobby, phone, address, sessionCode, validateCode, emailCode, emailCodeWithSession);
+        return ret;
     }
 
 
@@ -80,23 +84,17 @@ public class UserController {
      * 登陆处理
      */
     @RequestMapping("/loginDeal")
-    public void loginDeal(HttpServletRequest req, HttpServletResponse resp) {
-        PrintWriter out = null;
-        try {
-            out = resp.getWriter();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+    @ResponseBody()
+    public String loginDeal(HttpServletRequest req, HttpServletResponse resp) {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String ret = userService.loginDeal(username, password);
         if (ret.equals("loginSuccess")) {
             HttpSession httpSession = req.getSession();
             httpSession.setAttribute("username", username);
-            out.write("loginSuccess");
+            return "loginSuccess";
         } else {
-            out.write(ret);
+            return ret;
         }
     }
 
@@ -174,5 +172,22 @@ public class UserController {
         String password = req.getParameter("password");
         String password2 = req.getParameter("password2");
         out.print(userService.updatePassword(username, password, password2, email));
+    }
+
+    /**
+     * 发送验证码至邮箱
+     */
+    @RequestMapping("/verfCode")
+    public String verfCode(HttpServletRequest req, HttpServletResponse resp) {
+        String email = req.getParameter("email");
+        String isExist = userService.selectMailIsExist(email);
+        if (isExist != null) {
+            return "exist";
+        } else {
+            String emailCode = CreateVerfCode.getVerfCode();
+            req.getSession().setAttribute("emailCode", emailCode);
+            MailUtil.sendTo("您的验证码为：" + emailCode, email, "验证码");
+            return "success";
+        }
     }
 }

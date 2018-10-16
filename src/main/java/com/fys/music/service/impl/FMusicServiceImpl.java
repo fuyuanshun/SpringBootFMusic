@@ -41,7 +41,7 @@ public class FMusicServiceImpl implements FMusicService {
     }
 
     @Override
-    public String registerDeal(String username, String password, String password2, String email, String sex, Integer age, String birthday, String hobby, String phone, String address, String sessionCode, String validateCode) {
+    public String registerDeal(String username, String password, String password2, String email, String sex, Integer age, String birthday, String hobby, String phone, String address, String sessionCode, String validateCode, String emailCode, String emailCodeWithSession) {
         //服务器地址
         String path = "139.199.198.151:8080";
         String isexist = selectByUsername(username);
@@ -54,6 +54,9 @@ public class FMusicServiceImpl implements FMusicService {
             if(null != mail) {
                 return "emailIsExist";
             }
+            if (!emailCode.equals(emailCodeWithSession)) {
+                return "emailCodeError";
+            }
             /**
              * 后台对数据的验证,保证值不为空才发送至后台
              */
@@ -65,15 +68,9 @@ public class FMusicServiceImpl implements FMusicService {
                 User user = new User(username, password, email, sex, age, phone, birthday, hobby, address);
                 String url = UUID.randomUUID().toString();
                 url = url.replace("-", "");
-                user.setState(0);
+                user.setState(1);
                 user.setUrl(url);
-                try {
-                    if (!MailUtil.sendTo("<a href='" + path + "/mailConf?url=" + url + "'>激活帐号</a> 如果无法跳转，请将链接复制到浏览器: <a href='"+ path +"/FMusic/mailConf?url='" + url + ">"+ path +"/FMusic/mailConf?url=" + url + "</a>", user.getEmail())) {
-                        return "registerError";
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+
                 //防止用户注册的时候一直点击，从而数据库出现多条记录
                 if (null == selectByUsername(username)) {
                     if (1 == insertUser(user)) {
@@ -176,7 +173,7 @@ public class FMusicServiceImpl implements FMusicService {
         String validateCode = UUID.randomUUID().toString();
         validateCode = validateCode.replace("-", "");
         try {
-            MailUtil.sendTo("<a href='" + path + "/FMusic/resetPassword?url='"+validateCode+">请点击修改密码</a> 如果链接无法点击，请复制以下链接到浏览器: <a>" + path + "/FMusic/resetPassword?validateCode="+validateCode+"&email="+email+"</a>", email);
+            MailUtil.sendTo("<a href='" + path + "/FMusic/resetPassword?url='"+validateCode+">请点击修改密码</a> 如果链接无法点击，请复制以下链接到浏览器: <a>" + path + "/FMusic/resetPassword?validateCode="+validateCode+"&email="+email+"</a>", email, "激活您的帐号");
             updateValidateCode(validateCode, email);
         } catch (Exception e) {
             e.printStackTrace();
