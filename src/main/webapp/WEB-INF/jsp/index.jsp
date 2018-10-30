@@ -1,35 +1,102 @@
+<%@ page import="com.fys.music.model.Music" %>
+<%@ page import="java.util.List" %>
 <%@page isELIgnored="false" %>
 <%@   page contentType="text/html;charset=utf-8" %>
 <%@ page pageEncoding="utf-8" %>
 <jsp:include page="header.jsp"></jsp:include>
 <%response.setCharacterEncoding("utf8");%>
+
+<%
+    List<Music> musicList = (List<Music>)request.getAttribute("musicList");
+    String userId = (String) request.getSession().getAttribute("userId");
+%>
 <html>
 <head>
     <title>首页</title>
     <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <%--<script src="js/index.js"></script>--%>
 </head>
-<style>
-    div.carousel-item img {
-        width: 100%;
-        height: 300px;
+<script type="text/javascript">
+    $(function(){
+        $(".content .music button.collect").click(function(){
+           var id = $(this).val();
+            $.ajax({
+                url : "/FMusic/collect",
+                async : true,
+                type : "POST",
+                data : id,
+                success : function(data){
+                    if (data === "success") {
+                        $(this).addClass('collected');
+                        $(this).removeClass('btn-danger');
+                        alert("收藏成功 请去我的音乐查看!")
+                    } else if (data === "exist") {
+                        alert("收藏失败，该歌曲已经被收藏过了")
+                    }
+                },
+                error : function() {
+                    alert("服务器出了点问题~~请稍后再试哦~~嘤嘤嘤");
+                },
+                complete : function(xhr, status){
+                    var REDIRECT = xhr.getResponseHeader("REDIRECT");
+                    if(REDIRECT === "REDIRECT"){
+                        alert("请先进行登陆！");
+                        $(window).attr("location", "/FMusic/login");
+                    }
+                }
+            })
+        })
+    })
+
+</script>
+
+<style type="text/css">
+    .cl{
+        clear: both;
+        height : 20px;
+    }
+    .content{
+        margin : 0 auto;
+        width : 1100px;
     }
 
-    div#carousel-example-generic {
-        width: 80%;
-        margin: 0 auto;
+    .content .music{
+        height : 1000px;
     }
 
-    .tab a {
-        color: black;
+    .content .music ul{
+        list-style: none;
     }
 
-    .tab a:hover {
-        text-decoration: none;
-        color: darkred;
+    .content .music ul li{
+        float : left;
+        width : 300px;
+        height : 140px;
+        margin-right : 50px;
+        margin-bottom : 80px;
+    }
+
+    .content .music ul li div{
+        float : left;
+        margin-right: 10px;
+    }
+
+    .content .music ul li p{
+        float : left;
+        width : 150px;
+    }
+
+    .content .music ul li p span{
+        display: block;
+        line-height: 40px;
+    }
+
+    .collected{
+        background-color: #555;
     }
 </style>
-
 <body>
 <%--搜索start--%>
 <div class="container">
@@ -109,47 +176,35 @@
         <span class="line">|</span>
         <a href="#">电子</a>
     </div>
-    <%--显示图片的大div--%>
-    <div class="container" style="margin-top: 10px">
-        <div class="row">
-            <div class="col-xs-3">
-                <a href="#"><img src="images/music/musicbg1.png"></a>
-                <p class="text-muted"><a href="#">标题</a></p>
-            </div>
-            <div class="col-xs-3">
-                <a href="#"><img src="images/music/musicbg1.png"></a>
-                <p class="text-muted"><a href="#">标题</a></p>
-            </div>
-            <div class="col-xs-3">
-                <a href="#"><img src="images/music/musicbg1.png"></a>
-                <p class="text-muted"><a href="#">标题</a></p>
-            </div>
-            <div class="col-xs-3">
-                <a href="#"><img src="images/music/musicbg1.png"></a>
-                <p class="text-muted"><a href="#">标题</a></p>
-            </div>
-        </div>
-    </div>
-    <div class="container" style="margin-top: 10px">
-        <div class="row">
-            <div class="col-lg-3">
-                <a href="#"><img src="images/music/musicbg2.png"></a>
-                <p class="text-muted"><a href="#">标题</a></p>
-            </div>
-            <div class="col-xs-3">
-                <a href="#"><img src="images/music/musicbg3.png"></a>
-                <p class="text-muted"><a href="#">标题</a></p>
-            </div>
-            <div class="col-xs-3">
-                <a href="#"><img src="images/music/musicbg2.png"></a>
-                <p class="text-muted"><a href="#">标题</a></p>
-            </div>
-            <div class="col-xs-3">
-                <a href="#"><img src="images/music/musicbg1.png"></a>
-                <p class="text-muted"><a href="#">标题</a></p>
+
+        <div class="content">
+            <div class="cl"></div>
+            <div class="music">
+                <ul>
+                    <%
+                        if(null != musicList && musicList.size() != 0){
+                            for(Music music : musicList){
+                    %>
+                    <li>
+                        <div>
+                            <a href="#">
+                                <img src="images/music/musicbg1.png">
+                            </a>
+                        </div>
+                        <p>
+                            <span>歌曲名称:<%=music.getName()%></span>
+                            <span>演唱：<%=music.getAuthor()%></span>
+                            <span>
+                                <button type="submit" value="id=<%=music.getId()%>&userId=<%=userId%>" class="collect btn-sm btn-danger">收藏</button>
+                                <button class="btn-sm btn-success">播放</button>
+                            </span>
+                        </p>
+                        <audio src="<%=music.getPath()%>" controls="controls"></audio>
+                    </li>
+                    <%}}%>
+                </ul>
             </div>
         </div>
-    </div>
 </div>
 </body>
 </html>

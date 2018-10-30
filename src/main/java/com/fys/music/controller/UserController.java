@@ -1,5 +1,6 @@
 package com.fys.music.controller;
 
+import com.fys.music.model.Music;
 import com.fys.music.service.FMusicService;
 import com.fys.music.util.CreateVerfCode;
 import com.fys.music.util.MailUtil;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -25,7 +27,8 @@ public class UserController {
      * @return
      */
     @RequestMapping("/register")
-    public String register() {
+    public String register(HttpServletRequest req) {
+        req.setAttribute("flag", false);
         return "registerAndLogin";
     }
 
@@ -76,7 +79,8 @@ public class UserController {
      * 用户登陆页面
      */
     @RequestMapping("/login")
-    public String login() {
+    public String login(HttpServletRequest req) {
+        req.setAttribute("flag", true);
         return "registerAndLogin";
     }
 
@@ -92,6 +96,7 @@ public class UserController {
         if (ret.equals("loginSuccess")) {
             HttpSession httpSession = req.getSession();
             httpSession.setAttribute("username", username);
+            httpSession.setAttribute("userId", userService.selectIdByUsername(username));
             return "loginSuccess";
         } else {
             return ret;

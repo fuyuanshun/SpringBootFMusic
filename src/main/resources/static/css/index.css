@@ -1,0 +1,58 @@
+div.carousel-item img {
+    width: 100%;
+    height: 300px;
+}
+
+div#carousel-example-generic {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tab a {
+    color: black;
+}
+
+.tab a:hover {
+    text-decoration: none;
+    color: darkred;
+}
+
+.cl{
+    clear: both;
+    height : 20px;
+}
+.content{
+    margin : 0 auto;
+    width : 1100px;
+}
+
+.content .music{
+    height : 1000px;
+}
+
+.content .music ul{
+    list-style: none;
+}
+
+.content .music ul li{
+    float : left;
+    width : 300px;
+    height : 140px;
+    margin-right : 50px;
+    margin-bottom : 80px;
+}
+
+.content .music ul li div{
+    float : left;
+    margin-right: 10px;
+}
+
+.content .music ul li p{
+    float : left;
+    width : 150px;
+}
+
+.content .music ul li p span{
+    display: block;
+    line-height: 40px;
+}

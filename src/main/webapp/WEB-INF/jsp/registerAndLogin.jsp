@@ -3,6 +3,10 @@
 <%@ page pageEncoding="utf-8" %>
 <%@include file="header.jsp" %>
 <%request.setCharacterEncoding("utf-8");%>
+<%
+    String username = (String) request.getSession().getAttribute("username");
+    boolean flag = (boolean) request.getAttribute("flag");
+%>
 <html>
 <head>
     <title>注册用户</title>
@@ -22,21 +26,26 @@
     <%--使用js实现的生日下拉--%>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/birthdayByJS.js"></script>
 </head>
-
+<style>
+    #login .loginform input {
+        padding: 9px 22px 9px 20px;
+        height: auto;
+    }
+</style>
 <body>
 <div style="max-width:800px;margin:50px auto;">
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href="#login" data-toggle="tab">登陆</a>
+            <a class="nav-link <%if(flag){%>active<%}%>" href="<%if(username != null){%>#<%}else{%>#login<%}%>" data-toggle="tab">登陆</a>
         </li>
         <li>
-            <a class="nav-link" href="#register" data-toggle="tab">注册</a>
+            <a class="nav-link <%if(!flag){%>active<%}%>" href="#register" data-toggle="tab">注册</a>
         </li>
     </ul>
     <%--Tab panes--%>
     <div class="tab-content">
         <%--登陆DIV--%>
-        <div id="login" class="tab-pane active container" style="height:600px">
+        <div id="login" class="tab-pane <%if(flag){%>active<%}%> container" style="height:600px">
             <div class="wrapper">
                 <div class="login">
                     <form action="#" method="post" class="container offset1 loginform" id="loginform">
@@ -83,7 +92,7 @@
         </script>
 
         <%--注册DIV--%>
-        <div class="tab-pane container" id="register">
+        <div class="tab-pane container <%if(!flag){%>active<%}%>" id="register">
             <h3 class="text-muted text-center">请填写注册信息</h3>
             <form method="post" action="" id="myform">
                 <div class="col-sm-10">

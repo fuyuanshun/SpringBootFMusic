@@ -1,5 +1,6 @@
 package com.fys.music.dao;
 
+import com.fys.music.model.Music;
 import com.fys.music.model.Resource;
 import com.fys.music.model.User;
 import org.apache.ibatis.annotations.*;
@@ -97,4 +98,34 @@ public interface FMusicDao {
      */
     @Select("select username from user where email = #{email}")
     String selectUsernameByEmail(String email);
+
+    /**
+     * 根据id查询音乐信息
+     */
+    @Select("select id, name, author, path, picpath from music where id = #{id}")
+    Music selectMusicById(String id);
+
+    /**
+     * 查询所有的歌曲
+     */
+    @Select("select id, name, author, path, picpath from music")
+    List<Music> selectMusic();
+
+    /**
+     * 根据id查询歌曲是否已经被收藏
+     */
+    @Select("select * from user_music where music_id = #{id} and user_id = #{user_id}")
+    String selectCollectById(@Param("id") String id, @Param("user_id") String userId);
+
+    /**
+     * 收藏歌曲
+     */
+    @Select("insert into user_music (user_id, music_id) values (#{user_id}, #{id})")
+    void collectMusic(@Param("id") String id, @Param("user_id") String userId);
+
+    /**
+     * 根据用户名查询用户id
+     */
+    @Select("select id from user where username = #{username}")
+    String selectIdByUsername(String username);
 }

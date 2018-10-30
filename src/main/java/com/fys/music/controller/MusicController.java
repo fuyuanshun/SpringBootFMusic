@@ -1,11 +1,17 @@
 package com.fys.music.controller;
 
+import com.fys.music.model.Music;
+import com.fys.music.service.FMusicService;
 import com.fys.music.util.MailUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  *   Test Github Push
@@ -13,13 +19,19 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class MusicController {
+    @Autowired
+    FMusicService userService;
+
     boolean b = true;
 
     /**
      * 主页
      */
     @RequestMapping("/")
-    public String index(HttpServletRequest req, HttpServletResponse resp) {
+    public String index(HttpServletRequest req) {
+        List<Music> musicList = userService.selectMusic();
+        req.setAttribute("musicList", musicList);
+
         String addr = req.getRemoteAddr();
         if (b) {
             if (!(addr.equals("127.0.0.1")) && !(addr.equals("117.159.12.38"))) {
@@ -45,5 +57,23 @@ public class MusicController {
     @RequestMapping("/hotmusic")
     public String hotmusic() {
         return "hotmusic";
+    }
+
+    /**
+     * 收藏音乐
+     */
+    @RequestMapping("/collect")
+    @ResponseBody
+    public String collected(@RequestParam("id")String id, @RequestParam("userId")String userId){
+        return userService.collect(id, userId);
+    }
+
+    /**
+     *
+     */
+    @RequestMapping("/favoriteMusic")
+    public String favoriteMusic() {
+
+        return "favoritemusic";
     }
 }

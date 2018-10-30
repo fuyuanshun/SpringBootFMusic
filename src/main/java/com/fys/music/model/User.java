@@ -1,5 +1,7 @@
 package com.fys.music.model;
 
+import java.util.List;
+
 /**
  * 用户实体类
  */
@@ -17,9 +19,18 @@ public class User {
     private String birthday;
     private String hobby;
     private String address;
+    private List<Music> musicList;
 
     public User() {
 
+    }
+
+    public List<Music> getMusicList() {
+        return musicList;
+    }
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     public User(int id, String username, String password, String email, String url, Integer state, String sex, Integer age, String phone, String birthday, String hobby, String address) {

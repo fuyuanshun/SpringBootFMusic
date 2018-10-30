@@ -1,6 +1,7 @@
 package com.fys.music.service.impl;
 
 import com.fys.music.dao.FMusicDao;
+import com.fys.music.model.Music;
 import com.fys.music.model.Resource;
 import com.fys.music.model.User;
 import com.fys.music.service.FMusicService;
@@ -259,5 +260,72 @@ public class FMusicServiceImpl implements FMusicService {
         } else {
             return "updateError";
         }
+    }
+
+    /**
+     * 根据id查询音乐
+     * @param id id
+     * @return 音乐信息
+     */
+    @Override
+    public Music selectMusicById(String id) {
+        return FMusicDao.selectMusicById(id);
+    }
+
+    /**
+     * 查询所有的音乐
+     * @return
+     */
+    @Override
+    public List<Music> selectMusic() {
+        return FMusicDao.selectMusic();
+    }
+
+
+    /**
+     * 查询歌曲是否已经被收藏
+     * @param id
+     * @return
+     */
+    @Override
+    public String selectCollectById(String id, String userId) {
+        return FMusicDao.selectCollectById(id, userId);
+    }
+
+    /**
+     * 根据收藏歌曲
+     * @param id id
+     */
+    @Override
+    public void collectMusic(String id, String userId) {
+        FMusicDao.collectMusic(id, userId);
+    }
+
+    /**
+     * 收藏歌曲
+     * @param id
+     * @return
+     */
+    @Override
+    public String collect(String id, String userId) {
+        String isCollected = selectCollectById(id, userId);
+        if (null != isCollected) {
+            return "exist";
+        } else {
+            collectMusic(id, userId);
+            return "success";
+        }
+    }
+
+    /**
+     *
+     *   根据用户名查询用户id
+     *
+     * @param username
+     * @return
+     */
+    @Override
+    public String selectIdByUsername(String username) {
+        return FMusicDao.selectIdByUsername(username);
     }
 }
