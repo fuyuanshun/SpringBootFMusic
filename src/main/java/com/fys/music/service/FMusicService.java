@@ -138,4 +138,11 @@ public interface FMusicService {
      * 根据用户名查询用户id
      */
     String selectIdByUsername(String username);
+
+    /**
+     * 查询用户收藏的音乐列表
+     * @param userId
+     * @return
+     */
+    List<Music> selectAllMusic(String userId);
 }

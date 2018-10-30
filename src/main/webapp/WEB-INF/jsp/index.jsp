@@ -16,87 +16,9 @@
     <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
-    <%--<script src="js/index.js"></script>--%>
+    <script src="js/index.js"></script>
 </head>
-<script type="text/javascript">
-    $(function(){
-        $(".content .music button.collect").click(function(){
-           var id = $(this).val();
-            $.ajax({
-                url : "/FMusic/collect",
-                async : true,
-                type : "POST",
-                data : id,
-                success : function(data){
-                    if (data === "success") {
-                        $(this).addClass('collected');
-                        $(this).removeClass('btn-danger');
-                        alert("收藏成功 请去我的音乐查看!")
-                    } else if (data === "exist") {
-                        alert("收藏失败，该歌曲已经被收藏过了")
-                    }
-                },
-                error : function() {
-                    alert("服务器出了点问题~~请稍后再试哦~~嘤嘤嘤");
-                },
-                complete : function(xhr, status){
-                    var REDIRECT = xhr.getResponseHeader("REDIRECT");
-                    if(REDIRECT === "REDIRECT"){
-                        alert("请先进行登陆！");
-                        $(window).attr("location", "/FMusic/login");
-                    }
-                }
-            })
-        })
-    })
 
-</script>
-
-<style type="text/css">
-    .cl{
-        clear: both;
-        height : 20px;
-    }
-    .content{
-        margin : 0 auto;
-        width : 1100px;
-    }
-
-    .content .music{
-        height : 1000px;
-    }
-
-    .content .music ul{
-        list-style: none;
-    }
-
-    .content .music ul li{
-        float : left;
-        width : 300px;
-        height : 140px;
-        margin-right : 50px;
-        margin-bottom : 80px;
-    }
-
-    .content .music ul li div{
-        float : left;
-        margin-right: 10px;
-    }
-
-    .content .music ul li p{
-        float : left;
-        width : 150px;
-    }
-
-    .content .music ul li p span{
-        display: block;
-        line-height: 40px;
-    }
-
-    .collected{
-        background-color: #555;
-    }
-</style>
 <body>
 <%--搜索start--%>
 <div class="container">

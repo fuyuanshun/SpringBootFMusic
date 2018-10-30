@@ -128,4 +128,10 @@ public interface FMusicDao {
      */
     @Select("select id from user where username = #{username}")
     String selectIdByUsername(String username);
+
+    /**
+     * 查询用户的收藏列表
+     */
+    @Select("select * from music where id in (select music_id from user_music where user_id=#{userId}) group by id")
+    List<Music> selectAllMusic(String userId);
 }

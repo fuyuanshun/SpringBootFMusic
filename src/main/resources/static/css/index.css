@@ -56,3 +56,7 @@ div#carousel-example-generic {
     display: block;
     line-height: 40px;
 }
+
+.collected{
+    background-color: #555;
+}

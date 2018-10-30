@@ -72,8 +72,10 @@ public class MusicController {
      *
      */
     @RequestMapping("/favoriteMusic")
-    public String favoriteMusic() {
-
+    public String favoriteMusic(HttpServletRequest req) {
+        String id = (String) req.getSession().getAttribute("userId");
+        List<Music> musicList = userService.selectAllMusic(id);
+        req.setAttribute("musicList", musicList);
         return "favoritemusic";
     }
 }

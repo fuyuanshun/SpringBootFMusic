@@ -328,4 +328,14 @@ public class FMusicServiceImpl implements FMusicService {
     public String selectIdByUsername(String username) {
         return FMusicDao.selectIdByUsername(username);
     }
+
+    /**
+     * 查询用户收藏的音乐列表
+     * @param userId
+     * @return
+     */
+    @Override
+    public List<Music> selectAllMusic(String userId) {
+        return FMusicDao.selectAllMusic(userId);
+    }
 }

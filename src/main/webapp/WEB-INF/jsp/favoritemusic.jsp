@@ -1,3 +1,5 @@
+<%@ page import="com.fys.music.model.Music" %>
+<%@ page import="java.util.List" %>
 <%@page isELIgnored="false"%>
 <%@ page pageEncoding="utf-8" %>
 <jsp:include page="header.jsp"></jsp:include>
@@ -6,8 +8,60 @@
 <html>
 <head>
     <title>我的收藏</title>
+    <link rel="stylesheet" href="css/favoritemusic.css">
 </head>
+<%
+    List<Music> musicList = (List<Music>) request.getAttribute("musicList");
+%>
 <body>
-
+<div class="content">
+    <div class="left">
+        <ul>
+            <li class="first"><h5>我的歌单</h5></li>
+            <li>
+                <a href="#">
+                    <div class="leftimg">
+                        <img src="images/bg.jpg">
+                    </div>
+                    <span>我喜欢的音乐</span>
+                    <span> <%if(null != musicList ){%><%=musicList.size()%><%}%>首</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="right">
+        <div class="top"></div>
+        <div class="music">
+            <div class="info">
+                <h3><span>歌曲列表</span></h3>
+                <span> <%if(null != musicList ){%><%=musicList.size()%><%}%>首歌</span>
+            </div>
+            <div class="list">
+                <table>
+                    <thead>
+                    <tr>
+                        <th class="first"><div>&nbsp</div></th>
+                        <th class="second"><div>歌曲标题</div></th>
+                        <th class="_3"><div>时长</div></th>
+                        <th class="_4"><div>歌手</div></th>
+                        <th class="_5"><div>专辑</div></th>
+                    </tr>
+                    <%if(null != musicList && musicList.size() != 0){
+                        for(Music music : musicList){
+                    %>
+                    <tr class="music_list">
+                        <th><div><span><%=music.getId()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href="#"><img src="images/play.jpg" height="17px" width="20px"></a></div></th>
+                        <th><div><%=music.getName()%></div></th>
+                        <th><div>0:00</div></th>
+                        <th><div><%=music.getAuthor()%></div></th>
+                        <th><div>专辑</div></th>
+                    </tr>
+                    <%}}%>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
