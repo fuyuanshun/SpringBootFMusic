@@ -25,7 +25,7 @@ public class MysqlUtil {
     public static Connection getConn(String dbName, String username, String password) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/" + dbName +"?characterEncoding=UTF-8", username, password);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/" + dbName +"?characterEncoding=UTF-8&useSSL=false", username, password);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

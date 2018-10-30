@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 先执行此方法，再执行UpdateMusicList将数据库内容写入到json文件.
@@ -17,11 +19,24 @@ public class UpdateMusicDB {
     private static String password = "root";
 
     public static void main(String[] args) {
-        String dirName = "F:/CloudMusic";
+        String pattern = "(^\\S{2,3})\\-|(^[a-zA-Z]+)\\-";
+        Pattern pattern1 = Pattern.compile(pattern);
+
+        String dirName = "E:\\CloudMusic";
         String path = "http://139.199.198.151:8080/repo/music/";
         List<String> musicList = getMusicList(dirName);
-        for (String music : musicList) {
-            insertMusic(music, path+music);
+        for (String musicName : musicList) {
+            Matcher matcher = pattern1.matcher(musicName);
+
+            if (matcher.find()) {
+                if (null != matcher.group(1)) {
+                    insertMusic(musicName, matcher.group(1), path+musicName);
+                } else if(null != matcher.group(2)){
+                    insertMusic(musicName, matcher.group(2),path+musicName);
+                } else {
+                    insertMusic(musicName, "-", path+musicName);
+                }
+            }
         }
     }
 
@@ -55,20 +70,22 @@ public class UpdateMusicDB {
         return musicList;
     }
 
-    private static void insertMusic(String musicName, String path) {
-        String sql = "insert into music (name, path) values (?, ?)";
+    private static void insertMusic(String musicName, String author, String path) {
+
+        String sql = "insert into music (name, author, path) values (?, ?, ?)";
 
         Connection connection = MysqlUtil.getConn(dbName, username, password);
         PreparedStatement preparedStatement = MysqlUtil.getPreparedStatement(connection, sql);
         try {
             preparedStatement.setString(1, musicName);
-            preparedStatement.setString(2, path);
+            preparedStatement.setString(2, author);
+            preparedStatement.setString(3, path);
             if (preparedStatement.execute()) {
-                System.out.println("插入数据库成功!");
+                System.out.println(preparedStatement.toString());
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        System.out.println(preparedStatement.toString());
     }
 }

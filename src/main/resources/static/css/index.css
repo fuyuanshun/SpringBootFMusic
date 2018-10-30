@@ -28,6 +28,7 @@ div#carousel-example-generic {
 
 .content .music{
     height : 1000px;
+    font-size : 12px;
 }
 
 .content .music ul{
@@ -39,7 +40,7 @@ div#carousel-example-generic {
     width : 300px;
     height : 140px;
     margin-right : 50px;
-    margin-bottom : 80px;
+    margin-bottom : 170px;
 }
 
 .content .music ul li div{

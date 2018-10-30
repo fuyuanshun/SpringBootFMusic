@@ -183,6 +183,7 @@ public class UserController {
      * 发送验证码至邮箱
      */
     @RequestMapping("/verfCode")
+    @ResponseBody
     public String verfCode(HttpServletRequest req, HttpServletResponse resp) {
         String email = req.getParameter("email");
         String isExist = userService.selectMailIsExist(email);
