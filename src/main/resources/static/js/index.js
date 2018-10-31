@@ -1,4 +1,6 @@
 $(function(){
+    var flag = true;
+
     $(".content .music button.collect").click(function(){
         var id = $(this).val();
         $.ajax({
@@ -13,6 +15,37 @@ $(function(){
                     alert("收藏成功 请去我的音乐查看!")
                 } else if (data === "exist") {
                     alert("收藏失败，该歌曲已经被收藏过了")
+                }
+            },
+            error : function() {
+                alert("服务器出了点问题~~请稍后再试哦~~嘤嘤嘤");
+            },
+            complete : function(xhr, status){
+                var REDIRECT = xhr.getResponseHeader("REDIRECT");
+                if(REDIRECT === "REDIRECT"){
+                    alert("请先进行登陆！");
+                    $(window).attr("location", "/FMusic/login");
+                }
+            }
+        })
+    })
+
+    $(".content .music button.play").click(function(){
+        var id = $(this).val();
+        $.ajax({
+            url : "/FMusic/play",
+            async : true,
+            type : "POST",
+            data : id,
+            success : function(data){
+                var audio = new Audio(data);
+
+                if(flag){
+                    audio.play();
+                    flag = false;
+                } else {
+                    audio.pause();
+                    flag = true;
                 }
             },
             error : function() {

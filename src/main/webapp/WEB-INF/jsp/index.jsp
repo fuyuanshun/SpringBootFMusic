@@ -118,12 +118,12 @@
                             <span>演唱：<%=music.getAuthor()%></span>
                             <span>
                                 <button type="submit" value="id=<%=music.getId()%>&userId=<%=userId%>" class="collect btn-sm btn-danger">收藏</button>
-                                <button class="btn-sm btn-success">播放</button>
+                                <button type="submit" value="id=<%=music.getId()%>" class="play btn-sm btn-success">播放</button>
                             </span>
                         </p>
-                        <audio src="<%=music.getPath()%>" controls="controls"></audio>
                     </li>
                     <%}}%>
+                    <audio id="audio" src="" controls="controls"></audio>
                 </ul>
             </div>
         </div>

@@ -3,6 +3,7 @@ package com.fys.music.controller;
 import com.fys.music.model.Music;
 import com.fys.music.service.FMusicService;
 import com.fys.music.util.MailUtil;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -77,5 +78,12 @@ public class MusicController {
         List<Music> musicList = userService.selectAllMusic(id);
         req.setAttribute("musicList", musicList);
         return "favoritemusic";
+    }
+
+    @RequestMapping("/play")
+    @ResponseBody
+    public String playMusic(@RequestParam("id")String musicId) {
+        Music music = userService.selectMusicById(musicId);
+        return music.getPath();
     }
 }
