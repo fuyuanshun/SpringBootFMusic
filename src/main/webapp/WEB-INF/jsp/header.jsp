@@ -24,7 +24,7 @@
 <div>
 <nav class="top">
     <span><a href="${pageContext.request.contextPath}/">首页</a></span>
-    <span><a href="#">发现音乐</a> </span>
+    <span><a href="/FMusic/hotmusic">发现音乐</a> </span>
     <span><a href="${pageContext.request.contextPath}/favoriteMusic">我的音乐</a> </span>
     <span><a href="#">朋友</a> </span>
     <span><a href="#">商城</a> </span>
