@@ -1,6 +1,4 @@
 $(function(){
-    var flag = true;
-
     $(".content .music button.collect").click(function(){
         var id = $(this).val();
         $.ajax({
@@ -32,20 +30,22 @@ $(function(){
 
     $(".content .music button.play").click(function(){
         var id = $(this).val();
+
         $.ajax({
             url : "/FMusic/play",
             async : true,
             type : "POST",
             data : id,
             success : function(data){
-                var audio = new Audio(data);
-
-                if(flag){
-                    audio.play();
-                    flag = false;
+                if(data.length>120){
+                    alert("请先登录！");
+                    return;
+                }
+                $("#audio").attr("src", data);
+                if($("#audio")[0].paused){
+                    $("#audio")[0].play();
                 } else {
-                    audio.pause();
-                    flag = true;
+                    $("#audio")[0].pause();
                 }
             },
             error : function() {

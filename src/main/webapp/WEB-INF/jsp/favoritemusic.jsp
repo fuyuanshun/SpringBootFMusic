@@ -13,6 +13,38 @@
 <%
     List<Music> musicList = (List<Music>) request.getAttribute("musicList");
 %>
+<script type="text/javascript">
+    $(function(){
+        $("div div.list .music_list button.playbtn").click(function(){
+            var id = $(this).val();
+
+            $.ajax({
+                url : "/FMusic/play",
+                async : true,
+                type : "POST",
+                data : id,
+                success : function(data){
+                    $("#audio").attr("src", data);
+                    if($("#audio")[0].paused){
+                        $("#audio")[0].play();
+                    } else {
+                        $("#audio")[0].pause();
+                    }
+                },
+                error : function() {
+                    alert("服务器出了点问题~~请稍后再试哦~~嘤嘤嘤");
+                },
+                complete : function(xhr, status){
+                    var REDIRECT = xhr.getResponseHeader("REDIRECT");
+                    if(REDIRECT === "REDIRECT"){
+                        alert("请先进行登陆！");
+                        $(window).attr("location", "/FMusic/login");
+                    }
+                }
+            })
+        })
+    })
+</script>
 <body>
 <div class="content">
     <div class="left">
@@ -50,11 +82,11 @@
                         for(Music music : musicList){
                     %>
                     <tr class="music_list">
-                        <th><div><span><%=music.getId()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href="#"><img src="images/play.jpg" height="17px" width="20px"></a></div></th>
+                        <th><div><span><%=music.getId()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <button value="id=<%=music.getId()%>" class="playbtn"><img src="images/play.jpg" height="17px" width="20px"></button></div></th>
                         <th><div><%=music.getName()%></div></th>
-                        <th><div>0:00</div></th>
+                        <th><div>--</div></th>
                         <th><div><%=music.getAuthor()%></div></th>
-                        <th><div>专辑</div></th>
+                        <th><div>--</div></th>
                     </tr>
                     <%}}%>
                     </thead>
@@ -63,5 +95,6 @@
         </div>
     </div>
 </div>
+<audio id="audio" src=""></audio>
 </body>
 </html>
