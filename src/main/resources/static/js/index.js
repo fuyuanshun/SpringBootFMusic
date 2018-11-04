@@ -38,7 +38,6 @@ $(function(){
             data : id,
             success : function(data){
                 if(data.length>120){
-                    alert("请先登录！");
                     return;
                 }
                 $("#audio").attr("src", data);

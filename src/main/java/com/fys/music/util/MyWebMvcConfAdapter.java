@@ -14,6 +14,6 @@ public class MyWebMvcConfAdapter implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/", "/login", "/loginDeal", "/register", "/registerDeal", "/mailConf", "/verfCode", "/forgetPassword", "/forgetPasswordDeal", "/resetPassword", "/updatePassword", "/drawImage", "/css/**", "/js/**", "/auto/**", "/images/**");
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/","/admin", "/admin/upload", "/login", "/loginDeal", "/register", "/registerDeal", "/mailConf", "/verfCode", "/forgetPassword", "/forgetPasswordDeal", "/resetPassword", "/updatePassword", "/drawImage", "/css/**", "/js/**", "/auto/**", "/images/**");
     }
 }
