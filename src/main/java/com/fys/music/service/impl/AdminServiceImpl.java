@@ -20,15 +20,13 @@ public class AdminServiceImpl implements AdminService {
     public String uploadMusic(MultipartFile multipartFile, HttpServletRequest req) {
         String fileName = multipartFile.getOriginalFilename();
         ResultUtil resultUtil = null;
-        if (fileName == null || "".equals(fileName)) {
+        if (fileName == null || "".equals(fileName) || fileName.split("\\.").length == 0) {
             resultUtil = new ResultUtil("400", "仅支持上传MP3文件", null);
             return JSON.toJSONString(resultUtil);
         }
 
-        //获得数组的个数
-        String[] strings = fileName.split("\\.");
 
-        if (!fileName.split("\\.")[strings.length-1].equals("mp3")) {
+        if (!fileName.split("\\.")[fileName.split("\\.").length-1].equals("mp3")) {
             resultUtil = new ResultUtil("400", "仅支持上传MP3文件", null);
             return JSON.toJSONString(resultUtil);
         }

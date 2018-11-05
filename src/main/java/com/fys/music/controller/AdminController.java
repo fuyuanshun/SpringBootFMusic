@@ -38,7 +38,7 @@ public class AdminController {
         String json = adminService.uploadMusic(multipartFile, req);
         ResultUtil resultUtil = JSON.parseObject(json, ResultUtil.class);
         if (resultUtil.getCode().equals("200")) {
-            adminService.addMusic(fileName, "-", "localhost://8080/FMusic/music/"+fileName);
+            adminService.addMusic(fileName, "-", "localhost:8080//FMusic/music/"+fileName);
         }
         return json;
     }
