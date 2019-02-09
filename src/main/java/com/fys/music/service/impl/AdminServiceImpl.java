@@ -31,9 +31,8 @@ public class AdminServiceImpl implements AdminService {
             return JSON.toJSONString(resultUtil);
         }
 
-        String path = req.getServletContext().getRealPath("/");
-        path = path + "music";
-        File uploadDir = new File(path+"\\"+fileName);
+        String path = req.getServletContext().getRealPath("/music");
+        File uploadDir = new File(path+"/"+fileName);
         try {
             if (!new File(path).exists()) {
                 new File(path).mkdirs();

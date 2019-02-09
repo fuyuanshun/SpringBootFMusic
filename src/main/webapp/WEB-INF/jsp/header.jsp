@@ -37,7 +37,7 @@
             <a href="${pageContext.request.contextPath}/login">请登陆</a>
             <%--判断用户是否登陆，如果已经登陆就显示用户名和退出按钮--%>
             <%}else if(null != result && !result.equals("")) {%>
-            <span><%out.print(result);%></span>
+        <span><a href ="${pageContext.request.contextPath}/myInfo?username=<%=result%>" title="个人中心"><%out.print(result);%></a></span>
             <a href="${pageContext.request.contextPath}/logout">退出</a>
             <%}%>
             <a href="${pageContext.request.contextPath}/register">

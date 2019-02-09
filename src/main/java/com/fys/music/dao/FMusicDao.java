@@ -134,4 +134,25 @@ public interface FMusicDao {
      */
     @Select("select * from music where id in (select music_id from user_music where user_id=#{userId}) group by id")
     List<Music> selectAllMusic(String userId);
+
+    /**
+     * 查询用户信息
+     */
+    @Select("select username, email, sex, age, birthday, hobby, phone, address, last_login as lastLoginTime, signature from user where username = #{username}")
+    User getUserInfo(String username);
+
+    /**
+     * 更新个性签名
+     * @param signature 用户输入的数据
+     * @return
+     */
+    @Update("update user set signature = #{signature} where username = #{username}")
+    Integer updateSignature(@Param("signature")String signature, @Param("username") String username);
+
+    /**
+     * 更新最后登录的时间
+     * @param username
+     */
+    @Update("update user set last_login = now() where username = #{username}")
+    void updateLastLoginTime(String username);
 }

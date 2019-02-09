@@ -1,11 +1,13 @@
 package com.fys.music.controller;
 
 import com.fys.music.model.Music;
+import com.fys.music.model.User;
 import com.fys.music.service.FMusicService;
 import com.fys.music.util.CreateVerfCode;
 import com.fys.music.util.MailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -60,6 +62,27 @@ public class UserController {
 
         String ret = userService.registerDeal(username, password, password2, email, sex, age, birthday, hobby, phone, address, sessionCode, validateCode, emailCode, emailCodeWithSession);
         return ret;
+    }
+
+    /**
+     * 个人中心
+     */
+    @RequestMapping(value = "/myInfo")
+    public String myInfo(HttpServletRequest req, HttpServletResponse resp) {
+        String username = req.getParameter("username");
+        User user = userService.getUserInfo(username);
+        req.getSession().setAttribute("user", user);
+        return "myInfo";
+    }
+
+    /**
+     * 更新个性签名
+     */
+    @RequestMapping("/updateSignature")
+    public @ResponseBody String updateSignature(HttpServletRequest req, HttpServletResponse resp){
+        String signature = req.getParameter("signature");
+        String username = req.getParameter("username");
+        return userService.updateSignature(signature, username);
     }
 
 

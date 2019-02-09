@@ -123,7 +123,7 @@
                         </p>
                     </li>
                     <%}}%>
-                    <audio id="audio" src="" controls="controls"></audio>
+                    <audio id="audio" src=""></audio>
                 </ul>
             </div>
         </div>

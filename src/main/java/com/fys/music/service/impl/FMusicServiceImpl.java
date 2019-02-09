@@ -100,6 +100,8 @@ public class FMusicServiceImpl implements FMusicService {
                 return "userIsNotActive";
             }
             if(password.equals(dbpassword)) {
+                //更新最后登录的时间
+                FMusicDao.updateLastLoginTime(username);
                 return "loginSuccess";
             } else {
                 return "loginError";
@@ -337,5 +339,29 @@ public class FMusicServiceImpl implements FMusicService {
     @Override
     public List<Music> selectAllMusic(String userId) {
         return FMusicDao.selectAllMusic(userId);
+    }
+
+
+    /**
+     * 查询用户信息
+     */
+    @Override
+    public User getUserInfo(String username) {
+        return FMusicDao.getUserInfo(username);
+    }
+
+    /**
+     * 更新个性签名
+     * @param signature 从前台获取到的数据
+     * @return
+     */
+    @Override
+    public String updateSignature(String signature, String username) {
+        int state = FMusicDao.updateSignature(signature, username);
+        if (state == 1) {
+            return "保存成功!";
+        } else {
+            return "保存失败!";
+        }
     }
 }

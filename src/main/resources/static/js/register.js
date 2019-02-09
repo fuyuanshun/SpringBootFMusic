@@ -117,6 +117,7 @@ $(function () {
     $.validator.setDefaults({
         submitHandler: function() {
             var json = $("#myform").serialize();
+            console.info(json);
             $.ajax({
                 url : "/FMusic/registerDeal",
                 type : "post",

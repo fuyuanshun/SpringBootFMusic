@@ -145,4 +145,16 @@ public interface FMusicService {
      * @return
      */
     List<Music> selectAllMusic(String userId);
+
+    /**
+     * 查询用户信息
+     */
+    User getUserInfo(String username);
+
+    /**
+     * 更新个性签名
+     * @param signature
+     * @return
+     */
+    String updateSignature(String signature, String username);
 }
