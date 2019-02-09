@@ -77,6 +77,7 @@ public class MusicController {
         String id = (String) req.getSession().getAttribute("userId");
         List<Music> musicList = userService.selectAllMusic(id);
         req.setAttribute("musicList", musicList);
+        req.setAttribute("userId", id);
         return "favoritemusic";
     }
 
@@ -85,5 +86,16 @@ public class MusicController {
     public String playMusic(@RequestParam("id")String musicId) {
         Music music = userService.selectMusicById(musicId);
         return music.getPath();
+    }
+
+    /**
+     * 取消收藏音乐
+     */
+    @RequestMapping("/deleteFav")
+    public @ResponseBody String deleteFav(HttpServletRequest req, HttpServletResponse resp) {
+        String userId = req.getParameter("userId");
+
+        String id = req.getParameter("id");
+        return userService.deleteFav(userId, id);
     }
 }

@@ -155,4 +155,13 @@ public interface FMusicDao {
      */
     @Update("update user set last_login = now() where username = #{username}")
     void updateLastLoginTime(String username);
+
+    /**
+     * 取消收藏音乐
+     * @param userId 用户id
+     * @param id 歌曲id
+     * @return
+     */
+    @Delete("delete from user_music where user_id = #{user_id} and music_id = #{music_id}")
+    Integer deleteFav(@Param("user_id")String userId, @Param("music_id")String id);
 }

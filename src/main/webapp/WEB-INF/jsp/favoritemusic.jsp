@@ -12,12 +12,13 @@
 </head>
 <%
     List<Music> musicList = (List<Music>) request.getAttribute("musicList");
+    String userId = (String)request.getAttribute("userId");
 %>
 <script type="text/javascript">
     $(function(){
         $("div div.list .music_list button.playbtn").click(function(){
             var id = $(this).val();
-
+            console.info(userId);
             $.ajax({
                 url : "/FMusic/play",
                 async : true,
@@ -43,9 +44,30 @@
                 }
             })
         })
+
+        $("div div.list .music_list button.delete").click(function(){
+            var id = $(this).val();
+            var userId = $("#userId").val();
+            if(confirm('确定要取消收藏吗?')) {
+                $.ajax({
+                    url : "/FMusic/deleteFav",
+                    type : "POST",
+                    data : id + "&userId=" + userId,
+                    success : function(data){
+                        if (data === "success") {
+                            alert("取消成功!")
+                            location.reload();
+                        } else {
+                            alert("取消失败!")
+                        }
+                    }
+                })
+            }
+        })
     })
 </script>
 <body>
+<input type="hidden" value="<%=userId%>" id="userId">
 <div class="content">
     <div class="left">
         <ul>
@@ -82,7 +104,7 @@
                         for(Music music : musicList){
                     %>
                     <tr class="music_list">
-                        <th><div><span><%=music.getId()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <button value="id=<%=music.getId()%>" class="playbtn"><img src="images/play.jpg" height="17px" width="20px"></button></div></th>
+                        <th><div><button class="delete" value="id=<%=music.getId()%>"><img title="取消收藏" src="images/d.png" height="17px" width="20px"></button>&nbsp;&nbsp;<button value="id=<%=music.getId()%>" class="playbtn"><img src="images/play.jpg" height="17px" width="20px"></button></div></th>
                         <th><div><%=music.getName()%></div></th>
                         <th><div>--</div></th>
                         <th><div><%=music.getAuthor()%></div></th>

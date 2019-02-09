@@ -157,4 +157,12 @@ public interface FMusicService {
      * @return
      */
     String updateSignature(String signature, String username);
+
+    /**
+     * 取消收藏音乐
+     * @param userId
+     * @param id
+     * @return
+     */
+    String deleteFav(String userId, String id);
 }

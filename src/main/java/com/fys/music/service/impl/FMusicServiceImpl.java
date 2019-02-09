@@ -364,4 +364,18 @@ public class FMusicServiceImpl implements FMusicService {
             return "保存失败!";
         }
     }
+
+    /**
+     * 取消收藏音乐
+     * @param userId
+     * @param id
+     */
+    @Override
+    public String deleteFav(String userId, String id) {
+        if (FMusicDao.deleteFav(userId, id) == 1) {
+            return "success";
+        } else {
+            return "error";
+        }
+    }
 }
