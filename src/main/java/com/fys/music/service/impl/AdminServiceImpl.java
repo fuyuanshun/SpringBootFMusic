@@ -3,6 +3,7 @@ package com.fys.music.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.fys.music.dao.AdminDao;
 import com.fys.music.service.AdminService;
+import com.fys.music.util.MD5Util;
 import com.fys.music.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -84,5 +85,23 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void addMusic(String name, String author, String path) {
        adminDao.addMusic(name, author, path);
+    }
+
+    /**
+     * 查询管理员信息
+     * @param username 管理员账号
+     * @param password 管理员密码
+     * @return
+     */
+    @Override
+    public String getAdminInfo(String username, String password, HttpServletRequest req) {
+        //数据库的密码为加密后的密码，所以先将密码进行加密，再进行查询
+        password = MD5Util.getMD5(password);
+        if (adminDao.getAdminInfo(username, password) == 1) {
+            req.getSession().setAttribute("admin", username);
+            return "success";
+        } else {
+            return "账号或密码错误!";
+        }
     }
 }

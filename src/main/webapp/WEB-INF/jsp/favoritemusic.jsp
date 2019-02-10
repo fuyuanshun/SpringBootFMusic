@@ -18,7 +18,6 @@
     $(function(){
         $("div div.list .music_list button.playbtn").click(function(){
             var id = $(this).val();
-            console.info(userId);
             $.ajax({
                 url : "/FMusic/play",
                 async : true,

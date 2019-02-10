@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/admin")
@@ -20,12 +21,35 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public String admin() {
+    @RequestMapping(value = "index", method = RequestMethod.GET)
+    public String adminIndex(HttpServletRequest req) {
         return "admin";
     }
 
-    @RequestMapping(value = "/upload", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String admin() {
+        return "adminLogin";
+    }
+
+    @RequestMapping("/login")
+    public @ResponseBody String login(HttpServletRequest req, HttpServletResponse resp) {
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        if (username.trim().equals("") || password.trim().equals("")) {
+            return "不能为空";
+        } else {
+            return adminService.getAdminInfo(username, password, req);
+        }
+    }
+
+    @RequestMapping(value = "logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest req, HttpServletResponse resp) {
+        //清空Session
+        req.getSession().removeAttribute("admin");
+        return  "redirect:/admin/";
+    }
+
+    @RequestMapping(value = "/upload", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
     public @ResponseBody String upload(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest req) {
         String fileName = multipartFile.getOriginalFilename();
         //如果歌曲已经存在了，不再进行上传操作

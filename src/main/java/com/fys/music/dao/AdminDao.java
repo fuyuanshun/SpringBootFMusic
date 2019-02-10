@@ -23,4 +23,13 @@ public interface AdminDao {
      */
     @Insert(("insert into music (name, author, path) values (#{name}, #{author}, #{path})"))
     void addMusic(@Param("name")String name, @Param("author")String author, @Param("path")String path);
+
+    /**
+     * 查询管理员信息
+     * @param username
+     * @param password
+     * @return
+     */
+    @Select("select count(id) from user where username = #{username} and password = #{password} and power = 1")
+    Integer getAdminInfo(@Param("username")String username, @Param("password")String password);
 }

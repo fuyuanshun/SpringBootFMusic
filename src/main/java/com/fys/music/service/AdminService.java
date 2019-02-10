@@ -27,4 +27,12 @@ public interface AdminService {
      * @param path 音乐路径
      */
     void addMusic(String name, String author, String path);
+
+    /**
+     * 查询管理员信息
+     * @param username 管理员账号
+     * @param password 管理员密码
+     * @return
+     */
+    String getAdminInfo(String username, String password, HttpServletRequest req);
 }

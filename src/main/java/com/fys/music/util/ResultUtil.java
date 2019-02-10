@@ -2,6 +2,9 @@ package com.fys.music.util;
 
 import java.io.Serializable;
 
+/**
+ * 辅助类  返回json数据
+ */
 public class ResultUtil implements Serializable {
     private String code;
     private String msg;

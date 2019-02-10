@@ -164,4 +164,12 @@ public interface FMusicDao {
      */
     @Delete("delete from user_music where user_id = #{user_id} and music_id = #{music_id}")
     Integer deleteFav(@Param("user_id")String userId, @Param("music_id")String id);
+
+    /**
+     * 搜索音乐信息
+     * @param searchContent
+     * @return
+     */
+    @Select("select * from music where concat(name, author) like \"%\"#{searchContent}\"%\"")
+    List<Music> search(String searchContent);
 }
